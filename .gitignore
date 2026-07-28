@@ -35,6 +35,11 @@ yarn-error.*
 .env*.local
 credentials.json
 
+#claude
+.claude/
+AGENTS.md
+CLAUDE.md
+
 # IDE
 .vscode/
 
