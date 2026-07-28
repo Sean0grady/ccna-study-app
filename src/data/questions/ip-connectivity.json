@@ -1,0 +1,111 @@
+[
+  {
+    "id": "ip-connectivity-001",
+    "domain": "IP Connectivity",
+    "objective": "3.1",
+    "topic": "Routing Table",
+    "difficulty": "medium",
+    "question": "Which route will a router select when multiple routes match the destination?",
+    "choices": [
+      "The route with the lowest metric",
+      "The route with the longest prefix match",
+      "The oldest route",
+      "The route learned through OSPF"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Routers first select the route with the longest matching prefix.",
+    "tags": ["routing", "longest-prefix-match"]
+  },
+  {
+    "id": "ip-connectivity-002",
+    "domain": "IP Connectivity",
+    "objective": "3.1",
+    "topic": "Administrative Distance",
+    "difficulty": "medium",
+    "question": "A router has learned a route to 10.1.1.0/24 via both EIGRP (AD 90) and OSPF (AD 110). Which route will the router install in the routing table?",
+    "choices": [
+      "The OSPF route, because it has a lower process ID",
+      "The EIGRP route, because it has the lower administrative distance",
+      "Both routes, load-balanced equally",
+      "Neither route, since the AD values conflict"
+    ],
+    "correctAnswer": 1,
+    "explanation": "When multiple routing sources learn the same prefix, the router installs the route from the source with the lowest administrative distance -- here EIGRP (90) beats OSPF (110).",
+    "tags": ["administrative-distance", "routing"]
+  },
+  {
+    "id": "ip-connectivity-003",
+    "domain": "IP Connectivity",
+    "objective": "3.2",
+    "topic": "Static Routing",
+    "difficulty": "easy",
+    "question": "Which command correctly configures a static route to reach network 172.16.0.0/24 via next-hop 192.168.1.1?",
+    "choices": [
+      "ip route 172.16.0.0 255.255.255.0 192.168.1.1",
+      "route add 172.16.0.0/24 192.168.1.1",
+      "ip static-route 172.16.0.0 192.168.1.1 255.255.255.0",
+      "network 172.16.0.0 255.255.255.0 area 192.168.1.1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Cisco IOS syntax for a static route is 'ip route <destination-network> <subnet-mask> <next-hop-or-exit-interface>'.",
+    "tags": ["static-routing", "ios-cli"]
+  },
+  {
+    "id": "ip-connectivity-004",
+    "domain": "IP Connectivity",
+    "objective": "3.3",
+    "topic": "OSPF Neighbor States",
+    "difficulty": "hard",
+    "question": "In OSPF, which neighbor state indicates that two routers have fully synchronized their link-state databases?",
+    "choices": ["2-Way", "Exstart", "Loading", "Full"],
+    "correctAnswer": 3,
+    "explanation": "The Full state means the OSPF neighbors have completed database synchronization and have identical link-state databases; Exstart and Loading are intermediate states during that exchange.",
+    "tags": ["ospf", "neighbor-states"]
+  },
+  {
+    "id": "ip-connectivity-005",
+    "domain": "IP Connectivity",
+    "objective": "3.3",
+    "topic": "OSPF Router ID",
+    "difficulty": "medium",
+    "question": "If no router-id is manually configured and no loopback interfaces exist, how does an OSPF router select its router ID?",
+    "choices": [
+      "It uses the lowest MAC address of any interface",
+      "It uses the highest active physical interface IP address",
+      "It requests one from the DR",
+      "It generates a random 32-bit value"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Without a manually configured router-id or loopback interface, OSPF selects the highest IP address among its active physical interfaces as the router ID.",
+    "tags": ["ospf", "router-id"]
+  },
+  {
+    "id": "ip-connectivity-006",
+    "domain": "IP Connectivity",
+    "objective": "3.4",
+    "topic": "First-Hop Redundancy (HSRP)",
+    "difficulty": "medium",
+    "question": "What is the primary purpose of HSRP (Hot Standby Router Protocol)?",
+    "choices": [
+      "To load-balance traffic across multiple ISP links",
+      "To provide a virtual default gateway IP address shared by a group of routers for redundancy",
+      "To dynamically assign IP addresses to hosts",
+      "To translate between IPv4 and IPv6"
+    ],
+    "correctAnswer": 1,
+    "explanation": "HSRP allows a group of routers to present a single virtual IP address as the default gateway; if the active router fails, a standby router takes over transparently to hosts.",
+    "tags": ["hsrp", "first-hop-redundancy"]
+  },
+  {
+    "id": "ip-connectivity-007",
+    "domain": "IP Connectivity",
+    "objective": "3.1",
+    "topic": "Routing Table",
+    "difficulty": "easy",
+    "question": "What administrative distance do directly connected networks typically use in the routing table?",
+    "choices": ["0", "1", "90", "110"],
+    "correctAnswer": 0,
+    "explanation": "Directly connected networks have an administrative distance of 0, making them the most trusted routes -- more trusted even than static routes (AD 1).",
+    "tags": ["administrative-distance", "directly-connected"]
+  }
+]

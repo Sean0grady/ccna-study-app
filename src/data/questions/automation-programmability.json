@@ -1,0 +1,111 @@
+[
+  {
+    "id": "automation-programmability-001",
+    "domain": "Automation and Programmability",
+    "objective": "6.1",
+    "topic": "SDN Concepts",
+    "difficulty": "medium",
+    "question": "In a software-defined networking (SDN) architecture, what is the primary role of the control plane when separated from the data plane?",
+    "choices": [
+      "To physically forward packets between interfaces",
+      "To make centralized decisions about how traffic should be forwarded and push that policy to devices",
+      "To provide electrical power over Ethernet to endpoints",
+      "To perform physical cable termination"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In SDN, the control plane is centralized (often in a controller) and makes forwarding decisions/policy, while the data plane on each device simply forwards packets according to that centrally pushed policy.",
+    "tags": ["sdn", "control-plane"]
+  },
+  {
+    "id": "automation-programmability-002",
+    "domain": "Automation and Programmability",
+    "objective": "6.2",
+    "topic": "Traditional vs Controller-Based Networking",
+    "difficulty": "medium",
+    "question": "What is a key advantage of controller-based networking compared to traditional, device-by-device network management?",
+    "choices": [
+      "Each device must be configured individually via console cable",
+      "Centralized configuration and management reduce manual, repetitive per-device configuration",
+      "It eliminates the need for any IP addressing",
+      "It requires no software updates"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Controller-based networking centralizes configuration and policy management, letting administrators manage many devices consistently and programmatically instead of configuring each device individually.",
+    "tags": ["sdn", "controller-based-networking"]
+  },
+  {
+    "id": "automation-programmability-003",
+    "domain": "Automation and Programmability",
+    "objective": "6.3",
+    "topic": "REST API Basics",
+    "difficulty": "medium",
+    "question": "Which HTTP method is typically used in a REST API to retrieve data without modifying it?",
+    "choices": ["POST", "GET", "DELETE", "PUT"],
+    "correctAnswer": 1,
+    "explanation": "GET is the standard HTTP method for retrieving a resource's current representation without changing server-side state; POST/PUT/DELETE are used to create, update, or remove resources.",
+    "tags": ["rest-api", "http-methods"]
+  },
+  {
+    "id": "automation-programmability-004",
+    "domain": "Automation and Programmability",
+    "objective": "6.4",
+    "topic": "JSON Data",
+    "difficulty": "easy",
+    "question": "Which of the following is valid JSON representing an object with a string and a number field?",
+    "choices": [
+      "{ name: 'router1', port: 22 }",
+      "{ \"name\": \"router1\", \"port\": 22 }",
+      "<name>router1</name><port>22</port>",
+      "name=router1;port=22"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Valid JSON requires double-quoted keys and string values, formatted as key-value pairs inside curly braces, e.g. { \"name\": \"router1\", \"port\": 22 }.",
+    "tags": ["json", "data-formats"]
+  },
+  {
+    "id": "automation-programmability-005",
+    "domain": "Automation and Programmability",
+    "objective": "6.7",
+    "topic": "Configuration Management Tools",
+    "difficulty": "medium",
+    "question": "Which of these configuration management tools is agentless and push-based, defining automation tasks in YAML playbooks?",
+    "choices": ["Puppet", "Chef", "Ansible", "SaltStack (agent mode)"],
+    "correctAnswer": 2,
+    "explanation": "Ansible is agentless and push-based, connecting over SSH (or an API) and using human-readable YAML playbooks to define automation tasks, unlike Puppet and Chef which traditionally require agents installed on managed nodes.",
+    "tags": ["ansible", "configuration-management"]
+  },
+  {
+    "id": "automation-programmability-006",
+    "domain": "Automation and Programmability",
+    "objective": "6.7",
+    "topic": "Puppet and Chef",
+    "difficulty": "hard",
+    "question": "What do Puppet and Chef have in common in terms of their architecture, as compared to Ansible?",
+    "choices": [
+      "They are both agentless and push-based",
+      "They both traditionally require an agent installed on each managed node that pulls configuration from a central server",
+      "They cannot manage network devices",
+      "They only support JSON, not any other data format"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Puppet and Chef traditionally use a pull-based, agent-based model where an agent on each managed node periodically checks in with a central server to pull and apply configuration, unlike Ansible's agentless push model.",
+    "tags": ["puppet", "chef", "configuration-management"]
+  },
+  {
+    "id": "automation-programmability-007",
+    "domain": "Automation and Programmability",
+    "objective": "6.3",
+    "topic": "REST API Response Codes",
+    "difficulty": "medium",
+    "question": "In a REST API response, what does an HTTP status code of 404 indicate?",
+    "choices": [
+      "The request succeeded",
+      "The server encountered an internal error",
+      "The requested resource was not found",
+      "The client is not authorized to access the resource"
+    ],
+    "correctAnswer": 2,
+    "explanation": "HTTP 404 (Not Found) indicates the requested resource does not exist at the given URI; 200 indicates success, 401/403 indicate authorization issues, and 500 indicates a server error.",
+    "tags": ["rest-api", "http-status-codes"]
+  }
+]

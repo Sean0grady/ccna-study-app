@@ -1,0 +1,128 @@
+[
+  {
+    "id": "security-fundamentals-001",
+    "domain": "Security Fundamentals",
+    "objective": "5.1",
+    "topic": "CIA Triad",
+    "difficulty": "easy",
+    "question": "Which three principles make up the 'CIA triad' of information security?",
+    "choices": [
+      "Confidentiality, Integrity, Availability",
+      "Control, Isolation, Authentication",
+      "Confidentiality, Isolation, Authorization",
+      "Certification, Integrity, Auditing"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The CIA triad -- Confidentiality, Integrity, and Availability -- is the foundational model for evaluating and designing information security controls.",
+    "tags": ["security-concepts", "cia-triad"]
+  },
+  {
+    "id": "security-fundamentals-002",
+    "domain": "Security Fundamentals",
+    "objective": "5.2",
+    "topic": "AAA",
+    "difficulty": "medium",
+    "question": "In the AAA security model, what does the 'Authorization' component control?",
+    "choices": [
+      "Verifying a user's identity with credentials",
+      "What resources or actions an authenticated user is permitted to access",
+      "Logging user activity for later review",
+      "Encrypting data in transit"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Authorization determines what an already-authenticated user is allowed to do or access, distinct from Authentication (verifying identity) and Accounting (logging activity).",
+    "tags": ["aaa", "authorization"]
+  },
+  {
+    "id": "security-fundamentals-003",
+    "domain": "Security Fundamentals",
+    "objective": "5.3",
+    "topic": "VPN Types",
+    "difficulty": "medium",
+    "question": "Which type of VPN is typically used to allow an individual remote user's laptop to securely connect to a corporate network over the internet?",
+    "choices": ["Site-to-site VPN", "Remote-access VPN", "MPLS VPN", "VLAN trunking"],
+    "correctAnswer": 1,
+    "explanation": "A remote-access VPN (e.g., using an IPsec or SSL client) lets an individual device establish an encrypted tunnel back to the corporate network, unlike a site-to-site VPN which connects two networks/locations together.",
+    "tags": ["vpn", "remote-access"]
+  },
+  {
+    "id": "security-fundamentals-004",
+    "domain": "Security Fundamentals",
+    "objective": "5.7",
+    "topic": "Port Security",
+    "difficulty": "medium",
+    "question": "By default, what action does Cisco switch port security take when the configured maximum number of MAC addresses on a port is exceeded and the violation mode is set to 'shutdown'?",
+    "choices": [
+      "The port continues forwarding traffic normally",
+      "The port is placed into an err-disabled state and stops forwarding traffic",
+      "The offending MAC address is automatically added to the allowed list",
+      "The switch sends an SNMP trap but takes no other action"
+    ],
+    "correctAnswer": 1,
+    "explanation": "With the 'shutdown' violation mode (the default), a port security violation puts the port into an err-disabled state, requiring manual intervention (or errdisable recovery) to bring it back up.",
+    "tags": ["port-security", "violation-modes"]
+  },
+  {
+    "id": "security-fundamentals-005",
+    "domain": "Security Fundamentals",
+    "objective": "5.6",
+    "topic": "Access Control Lists",
+    "difficulty": "hard",
+    "question": "An extended ACL is applied inbound on a router interface. What happens to a packet that does not match any of the ACL's explicit entries?",
+    "choices": [
+      "It is permitted by default",
+      "It is dropped due to the implicit deny at the end of the ACL",
+      "It is queued until a matching entry is added",
+      "It is forwarded to the next hop unmodified, bypassing the ACL"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Every Cisco ACL ends with an implicit 'deny all' statement, so any packet that doesn't match a preceding permit or deny entry is dropped.",
+    "tags": ["acl", "implicit-deny"]
+  },
+  {
+    "id": "security-fundamentals-006",
+    "domain": "Security Fundamentals",
+    "objective": "5.1",
+    "topic": "Security Threats",
+    "difficulty": "medium",
+    "question": "What best describes a 'phishing' attack?",
+    "choices": [
+      "Flooding a target with traffic to exhaust its resources",
+      "Deceiving a user via fraudulent email or messages into revealing sensitive information or credentials",
+      "Intercepting and altering traffic between two parties without their knowledge",
+      "Exploiting a software vulnerability before a patch is available"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Phishing is a social engineering attack that tricks users, typically through deceptive email or messages impersonating a trusted source, into revealing credentials or sensitive information.",
+    "tags": ["security-threats", "social-engineering"]
+  },
+  {
+    "id": "security-fundamentals-007",
+    "domain": "Security Fundamentals",
+    "objective": "5.10",
+    "topic": "WLAN Security",
+    "difficulty": "medium",
+    "question": "Which wireless security standard uses SAE (Simultaneous Authentication of Equals) to provide stronger protection against offline password-guessing attacks than its predecessor?",
+    "choices": ["WEP", "WPA", "WPA2-PSK", "WPA3-PSK"],
+    "correctAnswer": 3,
+    "explanation": "WPA3-Personal replaces the WPA2 four-way handshake's PSK exchange with SAE, which resists offline dictionary/password-guessing attacks that were possible against WPA2-PSK.",
+    "tags": ["wlan-security", "wpa3"]
+  },
+  {
+    "id": "security-fundamentals-008",
+    "domain": "Security Fundamentals",
+    "objective": "5.1",
+    "topic": "Security Program Elements",
+    "difficulty": "easy",
+    "question": "What is the purpose of an organization's 'security awareness program' as an element of a security program?",
+    "choices": [
+      "To physically secure server rooms",
+      "To educate employees on recognizing and responding to security threats such as phishing and social engineering",
+      "To encrypt all data at rest",
+      "To configure firewall access control lists"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Security awareness programs train employees to recognize threats like phishing and social engineering, reducing the human-factor risk that technical controls alone can't fully address.",
+    "tags": ["security-concepts", "security-awareness"]
+  }
+]

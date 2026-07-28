@@ -1,0 +1,123 @@
+[
+  {
+    "id": "network-access-001",
+    "domain": "Network Access",
+    "objective": "2.1",
+    "topic": "VLANs",
+    "difficulty": "easy",
+    "question": "What is the primary purpose of configuring VLANs on a switch?",
+    "choices": [
+      "To increase the physical bandwidth of a switch port",
+      "To segment a single physical switch into multiple logical broadcast domains",
+      "To encrypt traffic between switches",
+      "To assign IP addresses to end devices automatically"
+    ],
+    "correctAnswer": 1,
+    "explanation": "VLANs logically segment a switch into separate broadcast domains, isolating traffic between groups of devices even though they share the same physical infrastructure.",
+    "tags": ["vlan", "switching"]
+  },
+  {
+    "id": "network-access-002",
+    "domain": "Network Access",
+    "objective": "2.1",
+    "topic": "Trunking (802.1Q)",
+    "difficulty": "medium",
+    "question": "When a frame is sent across an 802.1Q trunk link, what does the switch add to identify which VLAN the frame belongs to?",
+    "choices": ["A source MAC address", "A VLAN tag in the Ethernet frame header", "An IP TTL value", "A DSCP marking"],
+    "correctAnswer": 1,
+    "explanation": "802.1Q trunking inserts a 4-byte VLAN tag into the Ethernet frame header that identifies the VLAN the frame belongs to as it crosses the trunk.",
+    "tags": ["trunking", "802.1q"]
+  },
+  {
+    "id": "network-access-003",
+    "domain": "Network Access",
+    "objective": "2.2",
+    "topic": "Spanning Tree Protocol",
+    "difficulty": "medium",
+    "question": "What is the primary purpose of Spanning Tree Protocol (STP) in a switched network?",
+    "choices": [
+      "To load-balance traffic across all redundant links simultaneously",
+      "To prevent Layer 2 loops by blocking redundant paths",
+      "To assign VLAN membership to switch ports",
+      "To translate private IP addresses to public IP addresses"
+    ],
+    "correctAnswer": 1,
+    "explanation": "STP prevents broadcast storms and MAC table instability caused by Layer 2 loops by placing redundant links in a blocking state while keeping one loop-free active path.",
+    "tags": ["stp", "loop-prevention"]
+  },
+  {
+    "id": "network-access-004",
+    "domain": "Network Access",
+    "objective": "2.2",
+    "topic": "STP Port Roles",
+    "difficulty": "hard",
+    "question": "In Spanning Tree Protocol, which port role is selected on every non-root switch to forward traffic toward the root bridge?",
+    "choices": ["Designated port", "Root port", "Alternate port", "Backup port"],
+    "correctAnswer": 1,
+    "explanation": "Each non-root switch selects exactly one root port -- the port with the best (lowest cost) path toward the root bridge -- to forward traffic upstream.",
+    "tags": ["stp", "port-roles"]
+  },
+  {
+    "id": "network-access-005",
+    "domain": "Network Access",
+    "objective": "2.3",
+    "topic": "EtherChannel",
+    "difficulty": "medium",
+    "question": "What is the main benefit of configuring an EtherChannel between two switches?",
+    "choices": [
+      "It bundles multiple physical links into one logical link for increased bandwidth and redundancy without STP blocking any of the bundled ports",
+      "It automatically encrypts traffic between the two switches",
+      "It converts all bundled ports into access ports",
+      "It eliminates the need for VLANs on the link"
+    ],
+    "correctAnswer": 0,
+    "explanation": "EtherChannel bundles multiple physical links into a single logical link, providing combined bandwidth and redundancy. STP treats the bundle as one link, so no member ports are blocked.",
+    "tags": ["etherchannel", "link-aggregation"]
+  },
+  {
+    "id": "network-access-006",
+    "domain": "Network Access",
+    "objective": "2.4",
+    "topic": "Wireless Architectures",
+    "difficulty": "medium",
+    "question": "In a centralized (controller-based) wireless architecture, what is the primary role of the Wireless LAN Controller (WLC)?",
+    "choices": [
+      "To act as a DHCP relay only",
+      "To centrally manage configuration, and control access points across the network",
+      "To physically connect wireless clients to the switch",
+      "To provide wired Layer 2 switching for the access layer"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A WLC centrally manages AP configuration, RF settings, roaming, and security policy for the lightweight access points it controls, simplifying management compared to autonomous APs.",
+    "tags": ["wireless", "wlc"]
+  },
+  {
+    "id": "network-access-007",
+    "domain": "Network Access",
+    "objective": "2.4",
+    "topic": "AP Modes",
+    "difficulty": "medium",
+    "question": "Which access point mode allows a lightweight AP to continue switching client traffic locally even if its connection to the wireless LAN controller is lost?",
+    "choices": ["Local mode", "FlexConnect mode", "Monitor mode", "Sniffer mode"],
+    "correctAnswer": 1,
+    "explanation": "FlexConnect mode allows a lightweight AP to switch client traffic locally and continue providing WLAN service even if its connection to the WLC is lost, unlike local mode which requires the controller for data forwarding decisions.",
+    "tags": ["wireless", "ap-modes"]
+  },
+  {
+    "id": "network-access-008",
+    "domain": "Network Access",
+    "objective": "2.1",
+    "topic": "Native VLAN",
+    "difficulty": "medium",
+    "question": "On an 802.1Q trunk link, how is a frame belonging to the native VLAN transmitted?",
+    "choices": [
+      "It is dropped by the switch",
+      "It is sent untagged",
+      "It is tagged with VLAN ID 0",
+      "It is encapsulated in ISL"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Frames belonging to the native VLAN are sent across an 802.1Q trunk without a VLAN tag; both ends of the trunk must agree on which VLAN is native to avoid VLAN hopping issues.",
+    "tags": ["trunking", "native-vlan"]
+  }
+]

@@ -1,0 +1,118 @@
+[
+  {
+    "id": "ip-services-001",
+    "domain": "IP Services",
+    "objective": "4.1",
+    "topic": "NAT",
+    "difficulty": "medium",
+    "question": "Which type of NAT allows many internal private IP addresses to share a single public IP address by using different port numbers?",
+    "choices": ["Static NAT", "Dynamic NAT", "PAT (NAT Overload)", "NAT64"],
+    "correctAnswer": 2,
+    "explanation": "PAT, also called NAT overload, maps multiple internal private addresses to a single public IP address by tracking unique source port numbers for each translated session.",
+    "tags": ["nat", "pat"]
+  },
+  {
+    "id": "ip-services-002",
+    "domain": "IP Services",
+    "objective": "4.1",
+    "topic": "Static NAT",
+    "difficulty": "easy",
+    "question": "Which NAT type creates a fixed, one-to-one mapping between a single private IP address and a single public IP address?",
+    "choices": ["Dynamic NAT", "Static NAT", "PAT", "NAT overload"],
+    "correctAnswer": 1,
+    "explanation": "Static NAT creates a permanent one-to-one translation between one private address and one public address, commonly used for servers that must be reachable from outside at a consistent address.",
+    "tags": ["nat", "static-nat"]
+  },
+  {
+    "id": "ip-services-003",
+    "domain": "IP Services",
+    "objective": "4.5",
+    "topic": "DHCP",
+    "difficulty": "medium",
+    "question": "Which four-message process does a DHCP client use to obtain an IP address from a DHCP server?",
+    "choices": [
+      "SYN, SYN-ACK, ACK, FIN",
+      "Discover, Offer, Request, Acknowledge (DORA)",
+      "Hello, Request, Reply, Confirm",
+      "Solicit, Advertise, Request, Reply"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DHCP for IPv4 uses the DORA process: the client broadcasts a Discover, a server responds with an Offer, the client sends a Request for that offer, and the server confirms with an Acknowledge.",
+    "tags": ["dhcp", "dora"]
+  },
+  {
+    "id": "ip-services-004",
+    "domain": "IP Services",
+    "objective": "4.4",
+    "topic": "NTP",
+    "difficulty": "easy",
+    "question": "What is the primary purpose of NTP (Network Time Protocol) on network devices?",
+    "choices": [
+      "To synchronize device clocks to an accurate time source",
+      "To translate domain names to IP addresses",
+      "To assign IP addresses dynamically",
+      "To monitor CPU and memory utilization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "NTP synchronizes the clocks of network devices to a common, accurate time source, which is critical for correlating log timestamps, certificate validation, and troubleshooting.",
+    "tags": ["ntp", "time-synchronization"]
+  },
+  {
+    "id": "ip-services-005",
+    "domain": "IP Services",
+    "objective": "4.6",
+    "topic": "SNMP",
+    "difficulty": "medium",
+    "question": "In SNMP, what is the function of a 'trap'?",
+    "choices": [
+      "A scheduled request from the manager to poll a device",
+      "An unsolicited notification sent from a managed device to the SNMP manager when a significant event occurs",
+      "A command that reboots the managed device",
+      "A method for encrypting SNMP traffic"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A trap is an asynchronous, unsolicited message sent from an SNMP agent to the manager to immediately report a significant event, rather than waiting for the manager to poll.",
+    "tags": ["snmp", "traps"]
+  },
+  {
+    "id": "ip-services-006",
+    "domain": "IP Services",
+    "objective": "4.8",
+    "topic": "QoS Concepts",
+    "difficulty": "medium",
+    "question": "Which QoS mechanism ensures delay-sensitive traffic like voice is forwarded ahead of other traffic during periods of congestion?",
+    "choices": ["Traffic shaping", "Priority queuing / low-latency queuing", "NAT overload", "Route summarization"],
+    "correctAnswer": 1,
+    "explanation": "Low-latency queuing (a form of priority queuing) guarantees that delay-sensitive traffic such as voice is serviced first, minimizing jitter and latency during congestion.",
+    "tags": ["qos", "queuing"]
+  },
+  {
+    "id": "ip-services-007",
+    "domain": "IP Services",
+    "objective": "4.9",
+    "topic": "Syslog",
+    "difficulty": "easy",
+    "question": "In Cisco syslog severity levels, which level indicates the most severe condition, where the system is unusable?",
+    "choices": ["Level 0 - Emergency", "Level 3 - Error", "Level 5 - Notice", "Level 7 - Debug"],
+    "correctAnswer": 0,
+    "explanation": "Syslog severity levels range from 0 (Emergency, most severe -- system unusable) to 7 (Debug, least severe, informational detail).",
+    "tags": ["syslog", "severity-levels"]
+  },
+  {
+    "id": "ip-services-008",
+    "domain": "IP Services",
+    "objective": "4.1",
+    "topic": "NAT Terminology",
+    "difficulty": "hard",
+    "question": "In Cisco NAT terminology, what does the term 'inside local' address refer to?",
+    "choices": [
+      "The public IP address of an external server",
+      "The private IP address of an internal host as seen inside the local network",
+      "The translated public address of an internal host as seen outside the network",
+      "The IP address of the NAT router's outside interface"
+    ],
+    "correctAnswer": 1,
+    "explanation": "'Inside local' is the private, un-translated address of an internal host as it appears within the local network, before NAT translates it to the 'inside global' address used on the public network.",
+    "tags": ["nat", "terminology"]
+  }
+]
