@@ -2,6 +2,10 @@
 
 A React Native (Expo) app for studying CCNA 200-301 v1.1 exam topics: Network Fundamentals, Network Access, IP Connectivity, IP Services, Security Fundamentals, and Automation and Programmability.
 
+## Screenshots
+<img src="assets/screenshots/IMG_3469.png" width="280">
+<img src="assets/screenshots/IMG_3470.png" width="280">
+
 ## Features
 
 - Practice by domain, or take a mixed 20-question exam sampled evenly across all domains
