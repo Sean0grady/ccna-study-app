@@ -37,6 +37,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "3b6fe0d3-42ba-4b15-a7fe-acd13b193eb3"
+      }
+    },
+    "owner": "s0grady"
   }
 }
