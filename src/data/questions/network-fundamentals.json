@@ -92,5 +92,855 @@
     "correctAnswer": 1,
     "explanation": "The 5 GHz band offers more non-overlapping channels and less interference than 2.4 GHz, but its higher frequency signals attenuate faster, resulting in shorter effective range.",
     "tags": ["wireless", "rf-principles"]
-  }
+  }, 
+  {
+  "id": "network-fundamentals-008",
+  "domain": "Network Fundamentals",
+  "objective": "1.1",
+  "topic": "Router Functions",
+  "difficulty": "easy",
+  "question": "What is the primary function of a router?",
+  "choices": [
+    "Forward frames between devices in the same VLAN",
+    "Forward packets between different IP networks",
+    "Convert domain names into IP addresses",
+    "Provide electrical power to wireless clients"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A router operates primarily at Layer 3 and forwards packets between different IP networks by consulting its routing table.",
+  "tags": ["routers", "layer-3"]
+},
+{
+  "id": "network-fundamentals-009",
+  "domain": "Network Fundamentals",
+  "objective": "1.1",
+  "topic": "Layer 2 and Layer 3 Switches",
+  "difficulty": "medium",
+  "question": "Which capability distinguishes a Layer 3 switch from a traditional Layer 2 switch?",
+  "choices": [
+    "Learning source MAC addresses",
+    "Forwarding Ethernet frames",
+    "Routing traffic between IP subnets",
+    "Supporting full-duplex Ethernet"
+  ],
+  "correctAnswer": 2,
+  "explanation": "A Layer 3 switch can perform IP routing between subnets, while a traditional Layer 2 switch forwards frames based on MAC addresses.",
+  "tags": ["switches", "layer-3-switching"]
+},
+{
+  "id": "network-fundamentals-010",
+  "domain": "Network Fundamentals",
+  "objective": "1.1",
+  "topic": "Next-Generation Firewalls",
+  "difficulty": "medium",
+  "question": "Which feature is commonly associated with a next-generation firewall rather than a traditional packet-filtering firewall?",
+  "choices": [
+    "Application-aware traffic inspection",
+    "MAC address learning",
+    "Dynamic routing table creation",
+    "Ethernet collision detection"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Next-generation firewalls can identify and control traffic based on applications, users, and content in addition to traditional IP address and port filtering.",
+  "tags": ["firewall", "ngfw"]
+},
+{
+  "id": "network-fundamentals-011",
+  "domain": "Network Fundamentals",
+  "objective": "1.1",
+  "topic": "Intrusion Prevention Systems",
+  "difficulty": "medium",
+  "question": "How does an intrusion prevention system typically handle malicious traffic?",
+  "choices": [
+    "It observes traffic but cannot affect forwarding",
+    "It operates inline and can block detected threats",
+    "It assigns IP addresses to suspicious endpoints",
+    "It redirects all suspicious traffic to a DNS server"
+  ],
+  "correctAnswer": 1,
+  "explanation": "An IPS is commonly deployed inline so it can identify and actively block malicious traffic before that traffic reaches its destination.",
+  "tags": ["ips", "security-devices"]
+},
+{
+  "id": "network-fundamentals-012",
+  "domain": "Network Fundamentals",
+  "objective": "1.1",
+  "topic": "Access Points",
+  "difficulty": "easy",
+  "question": "What is the primary function of a wireless access point?",
+  "choices": [
+    "Connect wireless clients to a wired network",
+    "Route packets between autonomous systems",
+    "Translate private addresses into public addresses",
+    "Provide DNS resolution for wireless clients"
+  ],
+  "correctAnswer": 0,
+  "explanation": "A wireless access point provides connectivity between wireless clients and the wired LAN infrastructure.",
+  "tags": ["access-points", "wireless"]
+},
+{
+  "id": "network-fundamentals-013",
+  "domain": "Network Fundamentals",
+  "objective": "1.1",
+  "topic": "Power over Ethernet",
+  "difficulty": "easy",
+  "question": "What is a primary benefit of Power over Ethernet?",
+  "choices": [
+    "It encrypts Ethernet frames between switches",
+    "It delivers data and electrical power over the same cable",
+    "It increases the maximum length of copper Ethernet cables",
+    "It automatically assigns VLANs to switch ports"
+  ],
+  "correctAnswer": 1,
+  "explanation": "PoE allows devices such as access points, IP phones, and cameras to receive both network connectivity and electrical power through an Ethernet cable.",
+  "tags": ["poe", "ethernet"]
+},
+{
+  "id": "network-fundamentals-014",
+  "domain": "Network Fundamentals",
+  "objective": "1.2",
+  "topic": "Two-Tier Architecture",
+  "difficulty": "medium",
+  "question": "Which two layers are commonly combined in a two-tier campus network architecture?",
+  "choices": [
+    "Access and distribution",
+    "Distribution and core",
+    "Application and transport",
+    "Physical and data link"
+  ],
+  "correctAnswer": 1,
+  "explanation": "In a two-tier collapsed-core architecture, the distribution and core functions are combined, while the access layer remains separate.",
+  "tags": ["two-tier", "collapsed-core"]
+},
+{
+  "id": "network-fundamentals-015",
+  "domain": "Network Fundamentals",
+  "objective": "1.2",
+  "topic": "Three-Tier Architecture",
+  "difficulty": "easy",
+  "question": "Which layers make up a traditional three-tier campus network design?",
+  "choices": [
+    "Physical, data link, and network",
+    "Client, server, and database",
+    "Access, distribution, and core",
+    "Underlay, overlay, and fabric"
+  ],
+  "correctAnswer": 2,
+  "explanation": "A traditional three-tier campus design consists of the access, distribution, and core layers.",
+  "tags": ["three-tier", "campus-design"]
+},
+{
+  "id": "network-fundamentals-016",
+  "domain": "Network Fundamentals",
+  "objective": "1.2",
+  "topic": "Spine-Leaf Architecture",
+  "difficulty": "medium",
+  "question": "In a spine-leaf architecture, how are leaf switches normally connected?",
+  "choices": [
+    "Each leaf connects to every spine switch",
+    "Each leaf connects only to one neighboring leaf",
+    "Each leaf connects directly to every endpoint in the data center",
+    "Each leaf connects to a single core router"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Each leaf switch connects to every spine switch, creating predictable paths and consistent latency between endpoints attached to different leaves.",
+  "tags": ["spine-leaf", "data-center"]
+},
+{
+  "id": "network-fundamentals-017",
+  "domain": "Network Fundamentals",
+  "objective": "1.2",
+  "topic": "Spine-Leaf Architecture",
+  "difficulty": "hard",
+  "question": "A server connected to Leaf1 sends traffic to a server connected to Leaf2. What path does the traffic normally take in a spine-leaf topology?",
+  "choices": [
+    "Leaf1 to Leaf2 directly",
+    "Leaf1 to a spine switch to Leaf2",
+    "Leaf1 to every spine switch before reaching Leaf2",
+    "Leaf1 to an access switch, then to Leaf2"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Traffic between endpoints on different leaf switches normally crosses one spine switch, producing a leaf-spine-leaf path.",
+  "tags": ["spine-leaf", "traffic-path"]
+},
+{
+  "id": "network-fundamentals-018",
+  "domain": "Network Fundamentals",
+  "objective": "1.2",
+  "topic": "Cloud and On-Premises Networks",
+  "difficulty": "medium",
+  "question": "Which statement best describes an on-premises deployment?",
+  "choices": [
+    "Infrastructure is operated within facilities controlled by the organization",
+    "All infrastructure is owned and operated by a public cloud provider",
+    "Applications can only be accessed through the public internet",
+    "Network resources cannot be virtualized"
+  ],
+  "correctAnswer": 0,
+  "explanation": "In an on-premises deployment, the organization operates infrastructure in facilities it controls, although the equipment may still use virtualization and cloud-like technologies.",
+  "tags": ["on-premises", "cloud"]
+},
+{
+  "id": "network-fundamentals-019",
+  "domain": "Network Fundamentals",
+  "objective": "1.2",
+  "topic": "SOHO Networks",
+  "difficulty": "easy",
+  "question": "Which device commonly combines routing, switching, wireless access, DHCP, and NAT functions in a SOHO network?",
+  "choices": [
+    "Wireless LAN controller",
+    "Home wireless router",
+    "Dedicated intrusion prevention system",
+    "Core multilayer switch"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A typical home wireless router combines several functions, including routing, Ethernet switching, wireless access, DHCP, and NAT.",
+  "tags": ["soho", "home-router"]
+},
+{
+  "id": "network-fundamentals-020",
+  "domain": "Network Fundamentals",
+  "objective": "1.3",
+  "topic": "Single-Mode Fiber",
+  "difficulty": "easy",
+  "question": "Which cabling type is generally best suited for long-distance, high-bandwidth links?",
+  "choices": [
+    "Unshielded twisted-pair copper",
+    "Single-mode fiber",
+    "Multimode fiber",
+    "Coaxial console cable"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Single-mode fiber supports longer transmission distances than copper or multimode fiber because it uses a smaller core and experiences less modal dispersion.",
+  "tags": ["single-mode-fiber", "cabling"]
+},
+{
+  "id": "network-fundamentals-021",
+  "domain": "Network Fundamentals",
+  "objective": "1.3",
+  "topic": "Multimode Fiber",
+  "difficulty": "medium",
+  "question": "Compared with single-mode fiber, multimode fiber commonly has which characteristic?",
+  "choices": [
+    "A smaller core and longer supported distances",
+    "A larger core and shorter supported distances",
+    "Greater susceptibility to electromagnetic interference",
+    "Support for electrical signals instead of light"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Multimode fiber has a larger core that permits multiple light paths, which increases modal dispersion and generally limits its supported distance.",
+  "tags": ["multimode-fiber", "cabling"]
+},
+{
+  "id": "network-fundamentals-022",
+  "domain": "Network Fundamentals",
+  "objective": "1.3",
+  "topic": "Copper Cabling",
+  "difficulty": "easy",
+  "question": "What is one disadvantage of copper Ethernet cabling compared with fiber-optic cabling?",
+  "choices": [
+    "Copper cannot carry digital data",
+    "Copper is more susceptible to electromagnetic interference",
+    "Copper cannot support full-duplex communication",
+    "Copper requires an optical transceiver at each endpoint"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Electrical signals traveling over copper can be affected by electromagnetic interference, while fiber carries light and is not affected by EMI.",
+  "tags": ["copper", "emi"]
+},
+{
+  "id": "network-fundamentals-023",
+  "domain": "Network Fundamentals",
+  "objective": "1.3",
+  "topic": "Ethernet Media",
+  "difficulty": "medium",
+  "question": "Which Ethernet connection is considered a point-to-point link?",
+  "choices": [
+    "Two switches connected directly by a single Ethernet cable",
+    "Several devices connected to the same legacy Ethernet hub",
+    "Multiple wireless clients sharing the same radio channel",
+    "Several devices attached to the same coaxial Ethernet segment"
+  ],
+  "correctAnswer": 0,
+  "explanation": "A direct Ethernet connection between two switch interfaces is a point-to-point link because only those two interfaces use the link.",
+  "tags": ["point-to-point", "ethernet"]
+},
+{
+  "id": "network-fundamentals-024",
+  "domain": "Network Fundamentals",
+  "objective": "1.4",
+  "topic": "Duplex Mismatch",
+  "difficulty": "medium",
+  "question": "Which symptom is commonly associated with a duplex mismatch?",
+  "choices": [
+    "Both interfaces remain administratively down",
+    "The link operates but experiences poor performance and errors",
+    "The switch stops learning all MAC addresses",
+    "The interfaces automatically form an EtherChannel"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A duplex mismatch can leave the physical link operational while causing collisions, late collisions, frame check sequence errors, and severe performance degradation.",
+  "tags": ["duplex-mismatch", "interface-errors"]
+},
+{
+  "id": "network-fundamentals-025",
+  "domain": "Network Fundamentals",
+  "objective": "1.4",
+  "topic": "Interface Errors",
+  "difficulty": "hard",
+  "question": "A switch interface operating in full-duplex mode reports an increasing number of late collisions. What is the most likely cause?",
+  "choices": [
+    "A duplex mismatch with the neighboring device",
+    "Normal operation on a full-duplex Ethernet link",
+    "A missing default route",
+    "An incorrect DNS server address"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Collisions should not occur during normal full-duplex operation. Late collisions on such a link commonly indicate that the neighboring interface is operating in half-duplex mode.",
+  "tags": ["late-collisions", "duplex-mismatch"]
+},
+{
+  "id": "network-fundamentals-026",
+  "domain": "Network Fundamentals",
+  "objective": "1.4",
+  "topic": "CRC Errors",
+  "difficulty": "medium",
+  "question": "A switch interface shows a rapidly increasing number of CRC errors. Which problem should be investigated first?",
+  "choices": [
+    "A damaged cable or electrical interference",
+    "An expired DHCP lease",
+    "A duplicate static route",
+    "An incorrect NTP server"
+  ],
+  "correctAnswer": 0,
+  "explanation": "CRC errors indicate that frames arrived corrupted. Common causes include damaged cables, faulty connectors, interference, and failing interface hardware.",
+  "tags": ["crc-errors", "cabling"]
+},
+{
+  "id": "network-fundamentals-027",
+  "domain": "Network Fundamentals",
+  "objective": "1.4",
+  "topic": "Speed Mismatch",
+  "difficulty": "medium",
+  "question": "What is a likely result when two Ethernet interfaces do not support a common speed and cannot successfully negotiate one?",
+  "choices": [
+    "The link remains down",
+    "The interfaces automatically use half-duplex",
+    "The link becomes a trunk",
+    "The switch assigns an APIPA address"
+  ],
+  "correctAnswer": 0,
+  "explanation": "The two interfaces must use a mutually supported speed. If they cannot agree on or be configured for a common speed, the physical link will not come up.",
+  "tags": ["speed-mismatch", "interfaces"]
+},
+{
+  "id": "network-fundamentals-028",
+  "domain": "Network Fundamentals",
+  "objective": "1.5",
+  "topic": "TCP and UDP",
+  "difficulty": "easy",
+  "question": "Which transport-layer protocol establishes a connection before transmitting application data?",
+  "choices": [
+    "UDP",
+    "TCP",
+    "IP",
+    "ICMP"
+  ],
+  "correctAnswer": 1,
+  "explanation": "TCP is connection-oriented and uses a three-way handshake before application data is exchanged.",
+  "tags": ["tcp", "transport-layer"]
+},
+{
+  "id": "network-fundamentals-029",
+  "domain": "Network Fundamentals",
+  "objective": "1.5",
+  "topic": "TCP Reliability",
+  "difficulty": "medium",
+  "question": "Which TCP mechanism allows a receiver to confirm that data was successfully received?",
+  "choices": [
+    "Acknowledgment numbers",
+    "Time-to-live values",
+    "MAC address aging",
+    "ARP requests"
+  ],
+  "correctAnswer": 0,
+  "explanation": "TCP uses acknowledgment numbers to confirm received bytes and identify data that may need to be retransmitted.",
+  "tags": ["tcp", "acknowledgments"]
+},
+{
+  "id": "network-fundamentals-030",
+  "domain": "Network Fundamentals",
+  "objective": "1.5",
+  "topic": "UDP Characteristics",
+  "difficulty": "medium",
+  "question": "Why might an application use UDP instead of TCP?",
+  "choices": [
+    "UDP guarantees delivery without acknowledgments",
+    "UDP provides lower overhead and avoids connection establishment",
+    "UDP automatically encrypts application data",
+    "UDP retransmits every lost segment"
+  ],
+  "correctAnswer": 1,
+  "explanation": "UDP has less protocol overhead and does not establish a connection, making it useful when speed and low delay are more important than built-in reliability.",
+  "tags": ["udp", "transport-layer"]
+},
+{
+  "id": "network-fundamentals-031",
+  "domain": "Network Fundamentals",
+  "objective": "1.5",
+  "topic": "TCP Flow Control",
+  "difficulty": "hard",
+  "question": "Which TCP field is used by a receiving host to indicate how much additional data it can accept before receiving another acknowledgment?",
+  "choices": [
+    "Window size",
+    "Source port",
+    "Urgent pointer",
+    "Checksum"
+  ],
+  "correctAnswer": 0,
+  "explanation": "The TCP window-size field supports flow control by advertising how much unacknowledged data the receiver is currently prepared to accept.",
+  "tags": ["tcp", "flow-control"]
+},
+{
+  "id": "network-fundamentals-032",
+  "domain": "Network Fundamentals",
+  "objective": "1.6",
+  "topic": "IPv4 Subnetting",
+  "difficulty": "easy",
+  "question": "How many usable host addresses are available in a traditional IPv4 /24 subnet?",
+  "choices": [
+    "254",
+    "255",
+    "256",
+    "510"
+  ],
+  "correctAnswer": 0,
+  "explanation": "A /24 leaves 8 host bits, producing 256 total addresses. Excluding the network and broadcast addresses leaves 254 usable host addresses.",
+  "tags": ["ipv4", "subnetting"]
+},
+{
+  "id": "network-fundamentals-033",
+  "domain": "Network Fundamentals",
+  "objective": "1.6",
+  "topic": "IPv4 Subnet Masks",
+  "difficulty": "easy",
+  "question": "Which subnet mask corresponds to a /27 prefix length?",
+  "choices": [
+    "255.255.255.192",
+    "255.255.255.224",
+    "255.255.255.240",
+    "255.255.255.248"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A /27 mask contains 27 binary 1s, which is represented in dotted-decimal notation as 255.255.255.224.",
+  "tags": ["subnet-mask", "prefix-length"]
+},
+{
+  "id": "network-fundamentals-034",
+  "domain": "Network Fundamentals",
+  "objective": "1.6",
+  "topic": "IPv4 Subnetting",
+  "difficulty": "medium",
+  "question": "What is the network address of host 192.168.10.77/26?",
+  "choices": [
+    "192.168.10.0",
+    "192.168.10.64",
+    "192.168.10.76",
+    "192.168.10.128"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A /26 has a block size of 64. The subnet ranges begin at 0, 64, 128, and 192, so 192.168.10.77 belongs to the subnet beginning at 192.168.10.64.",
+  "tags": ["network-address", "subnetting"]
+},
+{
+  "id": "network-fundamentals-035",
+  "domain": "Network Fundamentals",
+  "objective": "1.6",
+  "topic": "IPv4 Broadcast Addresses",
+  "difficulty": "medium",
+  "question": "What is the broadcast address for the subnet 172.16.20.128/28?",
+  "choices": [
+    "172.16.20.135",
+    "172.16.20.143",
+    "172.16.20.144",
+    "172.16.20.159"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A /28 subnet has a block size of 16. The subnet beginning at .128 extends through .143, making .143 the broadcast address.",
+  "tags": ["broadcast-address", "subnetting"]
+},
+{
+  "id": "network-fundamentals-036",
+  "domain": "Network Fundamentals",
+  "objective": "1.6",
+  "topic": "IPv4 Host Capacity",
+  "difficulty": "medium",
+  "question": "What is the smallest traditional IPv4 prefix that supports at least 50 usable host addresses?",
+  "choices": [
+    "/25",
+    "/26",
+    "/27",
+    "/28"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A /26 provides 64 total addresses and 62 usable host addresses. A /27 provides only 30 usable addresses.",
+  "tags": ["host-capacity", "subnetting"]
+},
+{
+  "id": "network-fundamentals-037",
+  "domain": "Network Fundamentals",
+  "objective": "1.6",
+  "topic": "IPv4 Subnet Membership",
+  "difficulty": "hard",
+  "question": "Which host address is in the same subnet as 10.20.30.100/27?",
+  "choices": [
+    "10.20.30.63",
+    "10.20.30.94",
+    "10.20.30.126",
+    "10.20.30.129"
+  ],
+  "correctAnswer": 2,
+  "explanation": "A /27 has a block size of 32. The address 10.20.30.100 is in the 10.20.30.96–127 subnet, whose usable range is 10.20.30.97–126.",
+  "tags": ["subnet-membership", "ipv4"]
+},
+{
+  "id": "network-fundamentals-038",
+  "domain": "Network Fundamentals",
+  "objective": "1.6",
+  "topic": "IPv4 Point-to-Point Subnets",
+  "difficulty": "medium",
+  "question": "How many usable host addresses are available in a traditional /30 subnet?",
+  "choices": [
+    "1",
+    "2",
+    "4",
+    "6"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A /30 contains four total addresses: one network address, two usable host addresses, and one broadcast address.",
+  "tags": ["slash-30", "point-to-point"]
+},
+{
+  "id": "network-fundamentals-039",
+  "domain": "Network Fundamentals",
+  "objective": "1.7",
+  "topic": "Private IPv4 Addressing",
+  "difficulty": "easy",
+  "question": "Which IPv4 address is within a private address range?",
+  "choices": [
+    "8.8.8.8",
+    "172.20.10.5",
+    "192.0.2.10",
+    "203.0.113.5"
+  ],
+  "correctAnswer": 1,
+  "explanation": "The private 172.16.0.0/12 range extends from 172.16.0.0 through 172.31.255.255, so 172.20.10.5 is private.",
+  "tags": ["private-ipv4", "rfc1918"]
+},
+{
+  "id": "network-fundamentals-040",
+  "domain": "Network Fundamentals",
+  "objective": "1.7",
+  "topic": "Private IPv4 Addressing",
+  "difficulty": "medium",
+  "question": "Which address range is reserved for private IPv4 addressing?",
+  "choices": [
+    "169.254.0.0/16",
+    "172.16.0.0/12",
+    "192.0.2.0/24",
+    "224.0.0.0/4"
+  ],
+  "correctAnswer": 1,
+  "explanation": "The three private IPv4 ranges are 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16.",
+  "tags": ["private-addressing", "ipv4"]
+},
+{
+  "id": "network-fundamentals-041",
+  "domain": "Network Fundamentals",
+  "objective": "1.7",
+  "topic": "Private IPv4 Addressing",
+  "difficulty": "medium",
+  "question": "Why is NAT commonly used when hosts have private IPv4 addresses?",
+  "choices": [
+    "Private addresses are not normally routed across the public internet",
+    "Private addresses cannot be assigned to Ethernet interfaces",
+    "Private addresses do not support TCP or UDP",
+    "Private addresses must be converted into IPv6 link-local addresses"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Private IPv4 addresses are intended for internal networks and are not globally routable. NAT can translate them into publicly routable addresses.",
+  "tags": ["private-ipv4", "nat"]
+},
+{
+  "id": "network-fundamentals-042",
+  "domain": "Network Fundamentals",
+  "objective": "1.8",
+  "topic": "IPv6 Address Configuration",
+  "difficulty": "easy",
+  "question": "Which command assigns the IPv6 address 2001:db8:10::1 with a /64 prefix to a Cisco interface?",
+  "choices": [
+    "ip address 2001:db8:10::1 255.255.255.0",
+    "ipv6 address 2001:db8:10::1/64",
+    "ipv6 route 2001:db8:10::1/64",
+    "ip address 2001:db8:10::1/64"
+  ],
+  "correctAnswer": 1,
+  "explanation": "The Cisco IOS interface command uses the syntax ipv6 address followed by the IPv6 address and prefix length.",
+  "tags": ["ipv6", "configuration"]
+},
+{
+  "id": "network-fundamentals-043",
+  "domain": "Network Fundamentals",
+  "objective": "1.8",
+  "topic": "IPv6 Prefixes",
+  "difficulty": "medium",
+  "question": "Which IPv6 address belongs to the prefix 2001:db8:abcd:12::/64?",
+  "choices": [
+    "2001:db8:abcd:12:1234:5678:9abc:def0",
+    "2001:db8:abcd:13::1",
+    "2001:db8:abcd:1200::1",
+    "2001:db8:abce:12::1"
+  ],
+  "correctAnswer": 0,
+  "explanation": "With a /64 prefix, the first four hextets identify the network. Only the first choice begins with 2001:db8:abcd:12.",
+  "tags": ["ipv6-prefix", "subnetting"]
+},
+{
+  "id": "network-fundamentals-044",
+  "domain": "Network Fundamentals",
+  "objective": "1.8",
+  "topic": "IPv6 Compression",
+  "difficulty": "medium",
+  "question": "Which is the correct compressed representation of 2001:0db8:0000:0000:0000:00ab:0000:0001?",
+  "choices": [
+    "2001:db8::ab:0:1",
+    "2001:db8:0::0:ab::1",
+    "2001:db8::ab::1",
+    "2001:0db8:0000:00ab:0001"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Leading zeros can be removed from each hextet, and one continuous sequence of zero hextets can be replaced with a double colon.",
+  "tags": ["ipv6", "address-compression"]
+},
+{
+  "id": "network-fundamentals-045",
+  "domain": "Network Fundamentals",
+  "objective": "1.9",
+  "topic": "IPv6 Global Unicast Addresses",
+  "difficulty": "easy",
+  "question": "Which prefix is generally associated with IPv6 global unicast addresses?",
+  "choices": [
+    "2000::/3",
+    "FC00::/7",
+    "FE80::/10",
+    "FF00::/8"
+  ],
+  "correctAnswer": 0,
+  "explanation": "IPv6 global unicast addresses are generally allocated from 2000::/3 and are intended to be globally routable.",
+  "tags": ["ipv6", "global-unicast"]
+},
+{
+  "id": "network-fundamentals-046",
+  "domain": "Network Fundamentals",
+  "objective": "1.9",
+  "topic": "IPv6 Link-Local Addresses",
+  "difficulty": "medium",
+  "question": "Which statement about IPv6 link-local addresses is correct?",
+  "choices": [
+    "They are globally routable across the internet",
+    "They are used only as IPv6 multicast destinations",
+    "They are limited to communication on the local link",
+    "They must be assigned by a DHCPv6 server"
+  ],
+  "correctAnswer": 2,
+  "explanation": "IPv6 link-local addresses use FE80::/10 and are used for communication on the local network segment. Routers do not forward them beyond the link.",
+  "tags": ["ipv6", "link-local"]
+},
+{
+  "id": "network-fundamentals-047",
+  "domain": "Network Fundamentals",
+  "objective": "1.9",
+  "topic": "IPv6 Unique Local Addresses",
+  "difficulty": "medium",
+  "question": "Which IPv6 prefix identifies the unique local address range?",
+  "choices": [
+    "2000::/3",
+    "FC00::/7",
+    "FE80::/10",
+    "FF00::/8"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Unique local IPv6 addresses use FC00::/7 and are intended for private communication within an organization or between privately interconnected networks.",
+  "tags": ["ipv6", "unique-local"]
+},
+{
+  "id": "network-fundamentals-048",
+  "domain": "Network Fundamentals",
+  "objective": "1.9",
+  "topic": "IPv6 Anycast",
+  "difficulty": "hard",
+  "question": "What occurs when the same IPv6 anycast address is configured on multiple devices?",
+  "choices": [
+    "Traffic is delivered to every device using the address",
+    "Traffic is normally routed to the nearest device according to routing metrics",
+    "The address is automatically converted into a multicast address",
+    "Only the device with the highest MAC address can use it"
+  ],
+  "correctAnswer": 1,
+  "explanation": "An anycast address is assigned to multiple interfaces, and routing directs traffic toward the topologically closest instance according to the routing table.",
+  "tags": ["ipv6", "anycast"]
+},
+{
+  "id": "network-fundamentals-049",
+  "domain": "Network Fundamentals",
+  "objective": "1.9",
+  "topic": "IPv6 Multicast",
+  "difficulty": "easy",
+  "question": "Which prefix identifies IPv6 multicast addresses?",
+  "choices": [
+    "FC00::/7",
+    "FE80::/10",
+    "FF00::/8",
+    "2000::/3"
+  ],
+  "correctAnswer": 2,
+  "explanation": "IPv6 multicast addresses begin with FF and are contained within the FF00::/8 prefix.",
+  "tags": ["ipv6", "multicast"]
+},
+{
+  "id": "network-fundamentals-050",
+  "domain": "Network Fundamentals",
+  "objective": "1.9",
+  "topic": "Modified EUI-64",
+  "difficulty": "hard",
+  "question": "When Modified EUI-64 generates an IPv6 interface identifier from a 48-bit MAC address, what value is inserted into the middle of the MAC address?",
+  "choices": [
+    "0000",
+    "FFFE",
+    "FFFF",
+    "FE80"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Modified EUI-64 splits the 48-bit MAC address into two halves, inserts FFFE between them, and flips the universal/local bit.",
+  "tags": ["ipv6", "eui-64"]
+},
+{
+  "id": "network-fundamentals-051",
+  "domain": "Network Fundamentals",
+  "objective": "1.10",
+  "topic": "Client IP Parameters",
+  "difficulty": "easy",
+  "question": "Which Windows command displays detailed IP configuration information, including the default gateway and DNS servers?",
+  "choices": [
+    "ipconfig /all",
+    "show ip interface brief",
+    "netstat -r all",
+    "display interface"
+  ],
+  "correctAnswer": 0,
+  "explanation": "The Windows ipconfig /all command displays detailed addressing information for each network adapter.",
+  "tags": ["windows", "ipconfig"]
+},
+{
+  "id": "network-fundamentals-052",
+  "domain": "Network Fundamentals",
+  "objective": "1.10",
+  "topic": "APIPA Addressing",
+  "difficulty": "medium",
+  "question": "A Windows computer configured for DHCP assigns itself the address 169.254.25.10. What does this most likely indicate?",
+  "choices": [
+    "The computer successfully received an address from DHCP",
+    "The computer could not reach a DHCP server",
+    "The computer received a public address from the ISP",
+    "The computer successfully registered with DNS"
+  ],
+  "correctAnswer": 1,
+  "explanation": "An address in 169.254.0.0/16 is an APIPA address commonly assigned when a DHCP-enabled Windows host cannot obtain a lease.",
+  "tags": ["apipa", "dhcp-troubleshooting"]
+},
+{
+  "id": "network-fundamentals-053",
+  "domain": "Network Fundamentals",
+  "objective": "1.11",
+  "topic": "Wireless Channels",
+  "difficulty": "medium",
+  "question": "Which three 20 MHz channels are traditionally considered nonoverlapping in the 2.4 GHz Wi-Fi band in North America?",
+  "choices": [
+    "1, 5, and 9",
+    "1, 6, and 11",
+    "2, 7, and 12",
+    "3, 8, and 13"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Channels 1, 6, and 11 are traditionally used as the three nonoverlapping 20 MHz channels in the North American 2.4 GHz band.",
+  "tags": ["wireless", "channels"]
+},
+{
+  "id": "network-fundamentals-054",
+  "domain": "Network Fundamentals",
+  "objective": "1.11",
+  "topic": "SSID",
+  "difficulty": "easy",
+  "question": "What does an SSID identify in a wireless network?",
+  "choices": [
+    "The logical name of the wireless network",
+    "The physical MAC address of every wireless client",
+    "The encryption key used by the access point",
+    "The IP address assigned to the wireless controller"
+  ],
+  "correctAnswer": 0,
+  "explanation": "The service set identifier is the logical name used to identify a wireless network to clients.",
+  "tags": ["ssid", "wireless"]
+},
+{
+  "id": "network-fundamentals-055",
+  "domain": "Network Fundamentals",
+  "objective": "1.12",
+  "topic": "Virtualization",
+  "difficulty": "medium",
+  "question": "What is the role of a hypervisor in server virtualization?",
+  "choices": [
+    "It translates private IP addresses",
+    "It creates and manages virtual machines",
+    "It forwards frames based on MAC addresses",
+    "It provides wireless encryption"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A hypervisor abstracts physical computing resources and allocates them to virtual machines while managing their operation.",
+  "tags": ["virtualization", "hypervisor"]
+},
+{
+  "id": "network-fundamentals-056",
+  "domain": "Network Fundamentals",
+  "objective": "1.12",
+  "topic": "Containers and Virtual Machines",
+  "difficulty": "hard",
+  "question": "Which statement accurately compares containers with traditional virtual machines?",
+  "choices": [
+    "Each container normally includes a complete guest operating system",
+    "Containers commonly share the host operating system kernel",
+    "Virtual machines cannot run different operating systems on one host",
+    "Containers require more resources than virtual machines in every case"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Containers commonly share the host operating system kernel, making them more lightweight than virtual machines that include separate guest operating systems.",
+  "tags": ["containers", "virtual-machines"]
+},
+{
+  "id": "network-fundamentals-057",
+  "domain": "Network Fundamentals",
+  "objective": "1.13",
+  "topic": "MAC Address Learning",
+  "difficulty": "medium",
+  "question": "A switch receives a frame with source MAC address AAAA.AAAA.AAAA on interface GigabitEthernet0/3. What does the switch do with this information?",
+  "choices": [
+    "It records the source MAC address as reachable through GigabitEthernet0/3",
+    "It records the destination MAC address as reachable through GigabitEthernet0/3",
+    "It sends the source MAC address to the default gateway",
+    "It assigns an IP address to the source device"
+  ],
+  "correctAnswer": 0,
+  "explanation": "A switch learns from the source MAC address of incoming frames and associates that address with the interface on which the frame was received.",
+  "tags": ["mac-learning", "switching"]
+}
 ]

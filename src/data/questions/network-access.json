@@ -119,5 +119,854 @@
     "correctAnswer": 1,
     "explanation": "Frames belonging to the native VLAN are sent across an 802.1Q trunk without a VLAN tag; both ends of the trunk must agree on which VLAN is native to avoid VLAN hopping issues.",
     "tags": ["trunking", "native-vlan"]
+  },  {
+    "id": "network-access-009",
+    "domain": "Network Access",
+    "objective": "2.1",
+    "topic": "VLAN Concepts",
+    "difficulty": "easy",
+    "question": "What is the primary purpose of creating VLANs on a switch?",
+    "choices": [
+      "To increase the number of physical switch ports",
+      "To divide a Layer 2 network into separate broadcast domains",
+      "To automatically assign IP addresses to hosts",
+      "To encrypt traffic between switches"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each VLAN creates a separate Layer 2 broadcast domain. Devices in different VLANs require a Layer 3 device to communicate with one another.",
+    "tags": ["vlan", "broadcast-domain"]
+  },
+  {
+    "id": "network-access-010",
+    "domain": "Network Access",
+    "objective": "2.1",
+    "topic": "Access Ports",
+    "difficulty": "easy",
+    "question": "Which type of switch port normally carries traffic for a single VLAN?",
+    "choices": [
+      "Trunk port",
+      "Access port",
+      "Routed port",
+      "EtherChannel port"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An access port belongs to one access VLAN and normally connects to an endpoint such as a computer, printer, or server.",
+    "tags": ["vlan", "access-port"]
+  },
+  {
+    "id": "network-access-011",
+    "domain": "Network Access",
+    "objective": "2.1",
+    "topic": "Access VLAN Configuration",
+    "difficulty": "moderate",
+    "question": "Which commands correctly configure an interface as an access port in VLAN 20?",
+    "choices": [
+      "switchport mode trunk and switchport trunk allowed vlan 20",
+      "switchport mode access and switchport access vlan 20",
+      "switchport mode dynamic auto and switchport native vlan 20",
+      "no switchport and ip address vlan 20"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The switchport mode access command forces the interface to operate as an access port, and switchport access vlan 20 assigns it to VLAN 20.",
+    "tags": ["vlan", "access-port", "configuration"]
+  },
+  {
+    "id": "network-access-012",
+    "domain": "Network Access",
+    "objective": "2.1",
+    "topic": "Voice VLAN",
+    "difficulty": "moderate",
+    "question": "Why might a switch port be configured with both an access VLAN and a voice VLAN?",
+    "choices": [
+      "To connect two switches using EtherChannel",
+      "To support an IP phone and a connected computer on the same port",
+      "To allow the port to participate in two spanning-tree instances",
+      "To route traffic between two VLANs"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A switch port can carry untagged data traffic from a connected computer in the access VLAN and tagged voice traffic from an IP phone in the voice VLAN.",
+    "tags": ["voice-vlan", "access-port", "ip-phone"]
+  },
+  {
+    "id": "network-access-013",
+    "domain": "Network Access",
+    "objective": "2.1",
+    "topic": "Voice VLAN Configuration",
+    "difficulty": "hard",
+    "question": "A switch port connects to an IP phone with a computer attached through the phone. The computer should use VLAN 10 and the phone should use VLAN 30. Which configuration is correct?",
+    "choices": [
+      "switchport access vlan 30 and switchport voice vlan 10",
+      "switchport mode trunk and switchport native vlan 30",
+      "switchport mode access, switchport access vlan 10, and switchport voice vlan 30",
+      "switchport mode access and switchport access vlan 10,30"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The port remains an access port. Computer traffic uses access VLAN 10, while tagged traffic from the IP phone uses voice VLAN 30.",
+    "tags": ["voice-vlan", "access-vlan", "configuration"]
+  },
+  {
+    "id": "network-access-014",
+    "domain": "Network Access",
+    "objective": "2.1",
+    "topic": "Default VLAN",
+    "difficulty": "easy",
+    "question": "Which VLAN is the default access VLAN on a Cisco switch interface?",
+    "choices": [
+      "VLAN 0",
+      "VLAN 1",
+      "VLAN 100",
+      "VLAN 1002"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cisco switch ports are assigned to VLAN 1 by default unless they are explicitly placed into another VLAN.",
+    "tags": ["vlan", "default-vlan"]
+  },
+  {
+    "id": "network-access-015",
+    "domain": "Network Access",
+    "objective": "2.1",
+    "topic": "VLAN Verification",
+    "difficulty": "easy",
+    "question": "Which command displays VLANs and their assigned access ports on a Cisco switch?",
+    "choices": [
+      "show interfaces trunk",
+      "show vlan brief",
+      "show spanning-tree",
+      "show ip interface brief"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The show vlan brief command lists configured VLANs, their status, and access ports assigned to each VLAN.",
+    "tags": ["vlan", "verification", "ios-command"]
+  },
+  {
+    "id": "network-access-016",
+    "domain": "Network Access",
+    "objective": "2.2",
+    "topic": "Trunk Ports",
+    "difficulty": "easy",
+    "question": "What is the purpose of an Ethernet trunk link?",
+    "choices": [
+      "To carry traffic for multiple VLANs over one physical link",
+      "To connect only end-user devices",
+      "To prevent all broadcast traffic",
+      "To assign IP addresses to switches"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A trunk link carries traffic belonging to multiple VLANs, commonly between switches or between a switch and another VLAN-aware device.",
+    "tags": ["trunking", "vlan"]
+  },
+  {
+    "id": "network-access-017",
+    "domain": "Network Access",
+    "objective": "2.2",
+    "topic": "802.1Q",
+    "difficulty": "moderate",
+    "question": "How does IEEE 802.1Q identify the VLAN associated with an Ethernet frame?",
+    "choices": [
+      "It adds a VLAN tag to the Ethernet frame",
+      "It changes the source MAC address",
+      "It assigns a different EtherType to every VLAN",
+      "It adds a second IP header"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IEEE 802.1Q inserts a four-byte tag into an Ethernet frame. The tag contains VLAN identification information.",
+    "tags": ["802.1q", "trunking", "vlan-tag"]
+  },
+  {
+    "id": "network-access-018",
+    "domain": "Network Access",
+    "objective": "2.2",
+    "topic": "Native VLAN",
+    "difficulty": "moderate",
+    "question": "How is traffic in the native VLAN normally transmitted across an 802.1Q trunk?",
+    "choices": [
+      "With two VLAN tags",
+      "Without an 802.1Q VLAN tag",
+      "Only as multicast traffic",
+      "With an MPLS label"
+    ],
+    "correctAnswer": 1,
+    "explanation": "By default, frames belonging to the native VLAN are transmitted untagged across an 802.1Q trunk.",
+    "tags": ["native-vlan", "802.1q", "trunking"]
+  },
+  {
+    "id": "network-access-019",
+    "domain": "Network Access",
+    "objective": "2.2",
+    "topic": "Native VLAN",
+    "difficulty": "hard",
+    "question": "What is a likely consequence when the two ends of an 802.1Q trunk use different native VLANs?",
+    "choices": [
+      "The trunk immediately becomes an access link",
+      "Untagged traffic can be placed into different VLANs on each switch",
+      "All tagged VLAN traffic is automatically blocked",
+      "Both switches automatically negotiate a matching native VLAN"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each switch associates received untagged frames with its locally configured native VLAN. A mismatch can therefore place the same untagged traffic into different VLANs and generates a warning on Cisco switches.",
+    "tags": ["native-vlan", "troubleshooting", "trunking"]
+  },
+  {
+    "id": "network-access-020",
+    "domain": "Network Access",
+    "objective": "2.2",
+    "topic": "Allowed VLANs",
+    "difficulty": "moderate",
+    "question": "What does the switchport trunk allowed vlan command control?",
+    "choices": [
+      "Which VLAN is used for untagged traffic",
+      "Which VLANs are permitted to cross a trunk",
+      "Which VLAN is assigned to an access port",
+      "Which VLAN becomes the management VLAN"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The allowed VLAN list restricts the VLANs whose traffic can be carried across a trunk link.",
+    "tags": ["trunking", "allowed-vlans", "configuration"]
+  },
+  {
+    "id": "network-access-021",
+    "domain": "Network Access",
+    "objective": "2.2",
+    "topic": "Trunk Troubleshooting",
+    "difficulty": "hard",
+    "question": "Hosts in VLAN 30 can communicate within each switch but cannot communicate across the trunk. Other VLANs work normally. What is the most likely cause?",
+    "choices": [
+      "VLAN 30 is missing from the trunk's allowed VLAN list",
+      "The trunk has an incorrect native VLAN",
+      "Spanning Tree Protocol is disabled globally",
+      "The switches have different hostnames"
+    ],
+    "correctAnswer": 0,
+    "explanation": "When only one VLAN fails across an otherwise operational trunk, the VLAN may be missing from the allowed VLAN list or may not exist on one of the switches.",
+    "tags": ["trunking", "allowed-vlans", "troubleshooting"]
+  },
+  {
+    "id": "network-access-022",
+    "domain": "Network Access",
+    "objective": "2.2",
+    "topic": "Trunk Verification",
+    "difficulty": "easy",
+    "question": "Which command displays trunk status, native VLANs, and allowed VLANs?",
+    "choices": [
+      "show interfaces trunk",
+      "show vlan brief",
+      "show etherchannel summary",
+      "show cdp neighbors"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The show interfaces trunk command displays interfaces operating as trunks along with their encapsulation, native VLAN, and allowed VLAN information.",
+    "tags": ["trunking", "verification", "ios-command"]
+  },
+  {
+    "id": "network-access-023",
+    "domain": "Network Access",
+    "objective": "2.2",
+    "topic": "DTP",
+    "difficulty": "moderate",
+    "question": "What is the function of Dynamic Trunking Protocol?",
+    "choices": [
+      "It dynamically assigns VLAN IDs to hosts",
+      "It negotiates whether a link operates as a trunk",
+      "It elects the spanning-tree root bridge",
+      "It combines physical interfaces into an EtherChannel"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DTP is a Cisco protocol used to negotiate trunk formation between compatible switch interfaces.",
+    "tags": ["dtp", "trunking", "negotiation"]
+  },
+  {
+    "id": "network-access-024",
+    "domain": "Network Access",
+    "objective": "2.2",
+    "topic": "DTP",
+    "difficulty": "hard",
+    "question": "Two switch interfaces are both configured with switchport mode dynamic auto. What is the expected result?",
+    "choices": [
+      "A trunk forms because both ports support DTP",
+      "A trunk does not form because neither side actively requests trunking",
+      "The ports become routed interfaces",
+      "The ports are placed into an err-disabled state"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Dynamic auto is passive. A trunk generally does not form when both sides use dynamic auto because neither interface actively attempts to establish the trunk.",
+    "tags": ["dtp", "dynamic-auto", "trunking"]
+  },
+  {
+    "id": "network-access-025",
+    "domain": "Network Access",
+    "objective": "2.2",
+    "topic": "DTP",
+    "difficulty": "moderate",
+    "question": "Which command disables DTP negotiation on a manually configured trunk port?",
+    "choices": [
+      "switchport nonegotiate",
+      "no switchport trunking",
+      "switchport mode passive",
+      "no dtp enable"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The switchport nonegotiate command prevents the interface from sending DTP frames. The trunk must then be configured manually on both sides.",
+    "tags": ["dtp", "nonegotiate", "trunking"]
+  },
+  {
+    "id": "network-access-026",
+    "domain": "Network Access",
+    "objective": "2.3",
+    "topic": "CDP",
+    "difficulty": "easy",
+    "question": "What type of protocol is Cisco Discovery Protocol?",
+    "choices": [
+      "A vendor-neutral routing protocol",
+      "A Cisco-proprietary Layer 2 discovery protocol",
+      "A transport-layer reliability protocol",
+      "A VLAN trunking standard"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CDP is a Cisco-proprietary Layer 2 protocol that shares information about directly connected Cisco devices.",
+    "tags": ["cdp", "neighbor-discovery"]
+  },
+  {
+    "id": "network-access-027",
+    "domain": "Network Access",
+    "objective": "2.3",
+    "topic": "LLDP",
+    "difficulty": "easy",
+    "question": "How does LLDP differ from CDP?",
+    "choices": [
+      "LLDP is an open standard, while CDP is Cisco proprietary",
+      "LLDP operates at Layer 3, while CDP operates at Layer 2",
+      "LLDP supports only routers, while CDP supports only switches",
+      "LLDP encrypts neighbor information, while CDP does not"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LLDP is an IEEE vendor-neutral neighbor discovery protocol. CDP is proprietary to Cisco.",
+    "tags": ["lldp", "cdp", "neighbor-discovery"]
+  },
+  {
+    "id": "network-access-028",
+    "domain": "Network Access",
+    "objective": "2.3",
+    "topic": "Neighbor Discovery",
+    "difficulty": "moderate",
+    "question": "Which information can commonly be learned from CDP or LLDP?",
+    "choices": [
+      "A directly connected device's identity and port information",
+      "Every route in a neighboring router's routing table",
+      "User passwords configured on a neighboring device",
+      "The complete spanning-tree topology of the network"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Discovery protocols can provide information such as device name, local and remote interfaces, platform, capabilities, and management address.",
+    "tags": ["cdp", "lldp", "neighbor-information"]
+  },
+  {
+    "id": "network-access-029",
+    "domain": "Network Access",
+    "objective": "2.3",
+    "topic": "CDP Verification",
+    "difficulty": "moderate",
+    "question": "Which command provides detailed CDP information, including the IP addresses of directly connected Cisco neighbors?",
+    "choices": [
+      "show cdp neighbors detail",
+      "show interfaces cdp",
+      "show ip cdp route",
+      "show neighbors all"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The show cdp neighbors detail command displays expanded information about CDP neighbors, including management IP addresses.",
+    "tags": ["cdp", "verification", "ios-command"]
+  },
+  {
+    "id": "network-access-030",
+    "domain": "Network Access",
+    "objective": "2.4",
+    "topic": "EtherChannel",
+    "difficulty": "easy",
+    "question": "What is a primary benefit of EtherChannel?",
+    "choices": [
+      "It combines multiple physical links into one logical link",
+      "It eliminates the need for VLANs",
+      "It assigns IP addresses to switch ports",
+      "It converts access ports into routed ports"
+    ],
+    "correctAnswer": 0,
+    "explanation": "EtherChannel bundles multiple compatible physical links into one logical port channel, increasing bandwidth and providing link redundancy.",
+    "tags": ["etherchannel", "link-aggregation"]
+  },
+  {
+    "id": "network-access-031",
+    "domain": "Network Access",
+    "objective": "2.4",
+    "topic": "EtherChannel and STP",
+    "difficulty": "moderate",
+    "question": "How does Spanning Tree Protocol view an operational EtherChannel?",
+    "choices": [
+      "As several independent physical links",
+      "As one logical interface",
+      "As a routed interface only",
+      "As a permanently blocked link"
+    ],
+    "correctAnswer": 1,
+    "explanation": "STP treats the entire EtherChannel bundle as a single logical interface rather than blocking individual member links.",
+    "tags": ["etherchannel", "stp", "logical-interface"]
+  },
+  {
+    "id": "network-access-032",
+    "domain": "Network Access",
+    "objective": "2.4",
+    "topic": "LACP",
+    "difficulty": "easy",
+    "question": "Which protocol is the IEEE standard used to negotiate an EtherChannel?",
+    "choices": [
+      "PAgP",
+      "LACP",
+      "DTP",
+      "VTP"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Link Aggregation Control Protocol is the IEEE-standard protocol for negotiating an EtherChannel. PAgP is Cisco proprietary.",
+    "tags": ["lacp", "etherchannel"]
+  },
+  {
+    "id": "network-access-033",
+    "domain": "Network Access",
+    "objective": "2.4",
+    "topic": "LACP Modes",
+    "difficulty": "moderate",
+    "question": "Which pair of LACP modes successfully negotiates an EtherChannel?",
+    "choices": [
+      "Passive and passive",
+      "Active and passive",
+      "Desirable and auto",
+      "Auto and auto"
+    ],
+    "correctAnswer": 1,
+    "explanation": "LACP active initiates negotiation, while passive responds. Active-passive and active-active combinations can form an LACP EtherChannel.",
+    "tags": ["lacp", "active", "passive"]
+  },
+  {
+    "id": "network-access-034",
+    "domain": "Network Access",
+    "objective": "2.4",
+    "topic": "PAgP Modes",
+    "difficulty": "moderate",
+    "question": "Which PAgP mode actively attempts to form an EtherChannel?",
+    "choices": [
+      "Auto",
+      "Passive",
+      "Desirable",
+      "Active"
+    ],
+    "correctAnswer": 2,
+    "explanation": "PAgP desirable actively negotiates an EtherChannel. PAgP auto waits for the neighboring device to initiate negotiation.",
+    "tags": ["pagp", "desirable", "etherchannel"]
+  },
+  {
+    "id": "network-access-035",
+    "domain": "Network Access",
+    "objective": "2.4",
+    "topic": "Static EtherChannel",
+    "difficulty": "moderate",
+    "question": "What does channel-group mode on configure?",
+    "choices": [
+      "An EtherChannel that uses LACP negotiation",
+      "An EtherChannel that uses PAgP negotiation",
+      "A static EtherChannel without negotiation",
+      "A port that can join any available channel"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Mode on forces the interface into a static EtherChannel without using LACP or PAgP. Both sides must be configured consistently.",
+    "tags": ["etherchannel", "mode-on", "static"]
+  },
+  {
+    "id": "network-access-036",
+    "domain": "Network Access",
+    "objective": "2.4",
+    "topic": "EtherChannel Configuration",
+    "difficulty": "hard",
+    "question": "Which mismatch is most likely to prevent switch interfaces from joining the same Layer 2 EtherChannel?",
+    "choices": [
+      "Different interface descriptions",
+      "Different trunk modes or allowed VLAN configurations",
+      "Different CDP hold timers",
+      "Different physical interface numbers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "EtherChannel member interfaces must have compatible Layer 2 settings, including access or trunk mode, access VLAN, native VLAN, and allowed VLAN configuration.",
+    "tags": ["etherchannel", "configuration", "troubleshooting"]
+  },
+  {
+    "id": "network-access-037",
+    "domain": "Network Access",
+    "objective": "2.4",
+    "topic": "EtherChannel Verification",
+    "difficulty": "moderate",
+    "question": "In the output of show etherchannel summary, what does the flag P next to a physical interface indicate?",
+    "choices": [
+      "The interface is passive",
+      "The interface is bundled in the port channel",
+      "The interface is a Layer 3 port",
+      "The interface is powered down"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The P flag indicates that the physical interface is bundled and actively participating in the EtherChannel port channel.",
+    "tags": ["etherchannel", "verification", "flags"]
+  },
+  {
+    "id": "network-access-038",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "Spanning Tree Protocol",
+    "difficulty": "easy",
+    "question": "What is the primary purpose of Spanning Tree Protocol?",
+    "choices": [
+      "To prevent Layer 2 switching loops",
+      "To assign VLANs to access ports",
+      "To aggregate multiple physical links",
+      "To discover neighboring routers"
+    ],
+    "correctAnswer": 0,
+    "explanation": "STP creates a loop-free Layer 2 topology by placing selected redundant switch ports into a non-forwarding state.",
+    "tags": ["stp", "loop-prevention"]
+  },
+  {
+    "id": "network-access-039",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "Root Bridge Election",
+    "difficulty": "moderate",
+    "question": "How does STP select the root bridge?",
+    "choices": [
+      "The switch with the highest MAC address becomes root",
+      "The switch with the lowest bridge ID becomes root",
+      "The switch with the greatest number of ports becomes root",
+      "The switch with the highest interface bandwidth becomes root"
+    ],
+    "correctAnswer": 1,
+    "explanation": "STP elects the switch with the lowest bridge ID. The bridge ID includes bridge priority, extended system ID, and MAC address.",
+    "tags": ["stp", "root-bridge", "bridge-id"]
+  },
+  {
+    "id": "network-access-040",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "Bridge ID",
+    "difficulty": "hard",
+    "question": "Two switches use the same STP bridge priority for VLAN 10. Which switch becomes the root bridge?",
+    "choices": [
+      "The switch with the highest MAC address",
+      "The switch with the lowest MAC address",
+      "The switch with the lowest port priority",
+      "The switch that sends the first BPDU"
+    ],
+    "correctAnswer": 1,
+    "explanation": "If bridge priorities tie, the switch with the numerically lowest MAC address has the lower bridge ID and becomes the root bridge.",
+    "tags": ["stp", "bridge-id", "root-election"]
+  },
+  {
+    "id": "network-access-041",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "STP Root Port",
+    "difficulty": "moderate",
+    "question": "What is the root port on a non-root switch?",
+    "choices": [
+      "The port with the lowest-cost path toward the root bridge",
+      "Every port connected directly to an endpoint",
+      "The port with the highest port ID",
+      "The port elected to forward for each LAN segment"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each non-root switch selects one root port that provides its best path toward the root bridge.",
+    "tags": ["stp", "root-port", "path-cost"]
+  },
+  {
+    "id": "network-access-042",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "STP Designated Port",
+    "difficulty": "moderate",
+    "question": "What is the role of an STP designated port?",
+    "choices": [
+      "It provides the switch's best path toward the root bridge",
+      "It is the port selected to forward traffic onto a network segment",
+      "It is always placed into a blocking state",
+      "It connects only to end-user devices"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each Ethernet segment has a designated port that advertises the best BPDU onto that segment and operates in the forwarding state.",
+    "tags": ["stp", "designated-port"]
+  },
+  {
+    "id": "network-access-043",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "STP Port Selection",
+    "difficulty": "hard",
+    "question": "A switch receives two BPDUs that advertise equal root bridge IDs and equal root path costs. Which value is evaluated next when selecting the root port?",
+    "choices": [
+      "Lowest sender bridge ID",
+      "Highest local port number",
+      "Highest sender port priority",
+      "Lowest VLAN number"
+    ],
+    "correctAnswer": 0,
+    "explanation": "After comparing the root bridge ID and root path cost, STP compares the sender bridge ID. If that also ties, it compares the sender port ID and then the local port ID.",
+    "tags": ["stp", "root-port", "bpdu"]
+  },
+  {
+    "id": "network-access-044",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "STP Root Bridge",
+    "difficulty": "easy",
+    "question": "What port role do all operational ports on the STP root bridge use?",
+    "choices": [
+      "Root",
+      "Alternate",
+      "Designated",
+      "Backup"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The root bridge has no root port. Its operational ports are designated ports for their respective network segments.",
+    "tags": ["stp", "root-bridge", "designated-port"]
+  },
+  {
+    "id": "network-access-045",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "STP Path Cost",
+    "difficulty": "moderate",
+    "question": "Which path does STP prefer when selecting a root port?",
+    "choices": [
+      "The path with the highest cumulative cost",
+      "The path with the lowest cumulative cost",
+      "The path with the greatest number of switches",
+      "The path through the highest bridge priority"
+    ],
+    "correctAnswer": 1,
+    "explanation": "STP adds the incoming interface costs along each path and prefers the path with the lowest total root path cost.",
+    "tags": ["stp", "path-cost", "root-port"]
+  },
+  {
+    "id": "network-access-046",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "STP Configuration",
+    "difficulty": "moderate",
+    "question": "Which change makes a switch more likely to become the STP root bridge?",
+    "choices": [
+      "Increase its bridge priority",
+      "Decrease its bridge priority",
+      "Increase all interface costs",
+      "Increase all port priorities"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A lower bridge priority creates a lower bridge ID, making the switch more likely to win the root bridge election.",
+    "tags": ["stp", "bridge-priority", "root-bridge"]
+  },
+  {
+    "id": "network-access-047",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "STP Port Priority",
+    "difficulty": "hard",
+    "question": "Two equal-cost links connect a switch to the same neighboring switch. Which change can influence which local interface becomes the root port after all received BPDU values tie?",
+    "choices": [
+      "Lower the local STP port priority on the preferred interface",
+      "Raise the local STP port priority on the preferred interface",
+      "Change the switch's hostname",
+      "Increase the VLAN's bridge priority"
+    ],
+    "correctAnswer": 0,
+    "explanation": "When all superior BPDU fields and sender port IDs tie, the local port ID is used. Lowering the local port priority can make that interface preferred.",
+    "tags": ["stp", "port-priority", "root-port"]
+  },
+  {
+    "id": "network-access-048",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "RSTP",
+    "difficulty": "easy",
+    "question": "Which standard defines Rapid Spanning Tree Protocol?",
+    "choices": [
+      "IEEE 802.1D",
+      "IEEE 802.1w",
+      "IEEE 802.1Q",
+      "IEEE 802.3ad"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IEEE 802.1w originally defined Rapid Spanning Tree Protocol, which provides faster convergence than traditional 802.1D STP.",
+    "tags": ["rstp", "802.1w"]
+  },
+  {
+    "id": "network-access-049",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "RSTP Port Roles",
+    "difficulty": "moderate",
+    "question": "Which RSTP port role provides an alternate path toward the root bridge?",
+    "choices": [
+      "Designated",
+      "Alternate",
+      "Edge",
+      "Disabled"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An alternate port receives superior BPDUs from another switch and provides a backup path toward the root bridge.",
+    "tags": ["rstp", "alternate-port", "port-role"]
+  },
+  {
+    "id": "network-access-050",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "RSTP Port States",
+    "difficulty": "moderate",
+    "question": "Which three port states are used by RSTP?",
+    "choices": [
+      "Blocking, listening, and learning",
+      "Discarding, learning, and forwarding",
+      "Disabled, blocking, and forwarding",
+      "Listening, learning, and forwarding"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RSTP uses discarding, learning, and forwarding. The discarding state combines the traditional STP disabled, blocking, and listening states.",
+    "tags": ["rstp", "port-states"]
+  },
+  {
+    "id": "network-access-051",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "PortFast",
+    "difficulty": "moderate",
+    "question": "What is the effect of enabling PortFast on an access port?",
+    "choices": [
+      "The port immediately transitions toward the forwarding state",
+      "The port stops processing all BPDUs",
+      "The port becomes the root port",
+      "The port automatically becomes a trunk"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PortFast allows an edge port to enter forwarding without waiting through normal STP convergence delays. The port can still receive BPDUs.",
+    "tags": ["stp", "portfast", "edge-port"]
+  },
+  {
+    "id": "network-access-052",
+    "domain": "Network Access",
+    "objective": "2.5",
+    "topic": "BPDU Guard",
+    "difficulty": "hard",
+    "question": "What normally happens when a PortFast-enabled interface protected by BPDU Guard receives a BPDU?",
+    "choices": [
+      "The interface becomes the root port",
+      "The interface is placed into an err-disabled state",
+      "The BPDU is forwarded without processing",
+      "PortFast is disabled but the interface remains forwarding"
+    ],
+    "correctAnswer": 1,
+    "explanation": "BPDU Guard protects edge ports by placing an interface into an err-disabled state if a BPDU is received, helping prevent unauthorized switches from affecting STP.",
+    "tags": ["stp", "bpdu-guard", "portfast"]
+  },
+  {
+    "id": "network-access-053",
+    "domain": "Network Access",
+    "objective": "2.6",
+    "topic": "Wireless Architecture",
+    "difficulty": "easy",
+    "question": "What is the primary role of a wireless LAN controller in a controller-based WLAN?",
+    "choices": [
+      "To centrally manage lightweight access points and WLAN policies",
+      "To replace all Ethernet switches",
+      "To provide cellular service to wireless clients",
+      "To perform DNS resolution for access points"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A wireless LAN controller centrally manages lightweight access points, WLAN configuration, security policies, radio settings, and client connectivity.",
+    "tags": ["wireless", "wlc", "architecture"]
+  },
+  {
+    "id": "network-access-054",
+    "domain": "Network Access",
+    "objective": "2.6",
+    "topic": "CAPWAP",
+    "difficulty": "moderate",
+    "question": "What is the purpose of CAPWAP in a controller-based wireless network?",
+    "choices": [
+      "To create tunnels between lightweight access points and a wireless LAN controller",
+      "To negotiate Ethernet trunks between switches",
+      "To prevent wireless Layer 2 loops",
+      "To assign IPv6 addresses to wireless clients"
+    ],
+    "correctAnswer": 0,
+    "explanation": "CAPWAP provides control and, depending on the deployment, data tunnels between lightweight access points and their wireless LAN controller.",
+    "tags": ["wireless", "capwap", "wlc"]
+  },
+  {
+    "id": "network-access-055",
+    "domain": "Network Access",
+    "objective": "2.6",
+    "topic": "CAPWAP",
+    "difficulty": "hard",
+    "question": "A lightweight access point and its wireless LAN controller are separated by several routed networks. Which statement is correct?",
+    "choices": [
+      "CAPWAP requires the access point and controller to be in the same Layer 2 broadcast domain",
+      "CAPWAP can operate across routed IP networks",
+      "The access point must build an 802.1Q trunk directly to the controller",
+      "The access point must convert to autonomous mode"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CAPWAP is an IP-based tunnel and can traverse switches and routed networks. The access point does not require a direct physical or Layer 2 connection to the controller.",
+    "tags": ["wireless", "capwap", "routed-network"]
+  },
+  {
+    "id": "network-access-056",
+    "domain": "Network Access",
+    "objective": "2.7",
+    "topic": "Wireless Access Point Modes",
+    "difficulty": "moderate",
+    "question": "Which lightweight access point mode primarily serves wireless clients during normal operation?",
+    "choices": [
+      "Local mode",
+      "Monitor mode",
+      "Sniffer mode",
+      "Rogue detector mode"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Local mode is the standard lightweight AP operating mode. It serves wireless clients and periodically scans other channels.",
+    "tags": ["wireless", "ap-mode", "local-mode"]
+  },
+  {
+    "id": "network-access-057",
+    "domain": "Network Access",
+    "objective": "2.8",
+    "topic": "WLC Interfaces",
+    "difficulty": "hard",
+    "question": "What is the primary purpose of a dynamic interface on a traditional Cisco wireless LAN controller?",
+    "choices": [
+      "To connect a WLAN to a client VLAN",
+      "To establish console access to the controller",
+      "To elect the spanning-tree root bridge",
+      "To negotiate CAPWAP encryption"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A dynamic interface maps a WLAN to a corresponding wired client VLAN and provides Layer 3 information for that wireless client network.",
+    "tags": ["wireless", "wlc", "dynamic-interface"]
+  },
+  {
+    "id": "network-access-058",
+    "domain": "Network Access",
+    "objective": "2.9",
+    "topic": "Wireless LAN Configuration",
+    "difficulty": "hard",
+    "question": "When creating a WLAN on a wireless LAN controller, which configuration associates the wireless network name with the appropriate wired client network?",
+    "choices": [
+      "Mapping the WLAN to the correct VLAN or dynamic interface",
+      "Assigning the WLAN an STP port priority",
+      "Configuring the WLAN as an EtherChannel member",
+      "Enabling DTP on the WLAN"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A WLAN must be mapped to the appropriate controller interface or VLAN so that wireless client traffic enters the correct wired network.",
+    "tags": ["wireless", "wlan", "vlan-mapping"]
   }
 ]
