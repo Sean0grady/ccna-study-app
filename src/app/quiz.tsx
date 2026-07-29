@@ -11,7 +11,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import type { DomainId } from '@/data/domains';
-import { getQuestionsByDomain, getQuestionsByIds, sampleMixedExam } from '@/data/questionLoader';
+import { getQuestionsByIds, sampleDomainQuestions, sampleMixedExam } from '@/data/questionLoader';
 import { useTheme } from '@/hooks/use-theme';
 import { useProgressStore } from '@/store/useProgressStore';
 import { useQuizSessionStore, type QuizMode } from '@/store/useQuizSessionStore';
@@ -19,9 +19,11 @@ import { useQuizSessionStore, type QuizMode } from '@/store/useQuizSessionStore'
 export default function QuizScreen() {
   const router = useRouter();
   const theme = useTheme();
-  const params = useLocalSearchParams<{ mode: string; domain?: string }>();
+  const params = useLocalSearchParams<{ mode: string; domain?: string; count?: string }>();
   const mode = (params.mode as QuizMode) ?? 'practice';
   const domainId = params.domain as DomainId | undefined;
+  const requestedCount = Number(params.count);
+  const count = Number.isInteger(requestedCount) && requestedCount > 0 ? requestedCount : undefined;
 
   const startSession = useQuizSessionStore((s) => s.startSession);
   const selectChoice = useQuizSessionStore((s) => s.selectChoice);
@@ -37,7 +39,7 @@ export default function QuizScreen() {
 
   useEffect(() => {
     initialized.current = false;
-  }, [mode, domainId]);
+  }, [mode, domainId, count]);
 
   useEffect(() => {
     if (initialized.current) return;
@@ -45,16 +47,16 @@ export default function QuizScreen() {
 
     let sessionQuestions;
     if (mode === 'exam') {
-      sessionQuestions = sampleMixedExam(20);
+      sessionQuestions = sampleMixedExam(count ?? 20);
     } else if (mode === 'missed') {
       sessionQuestions = getQuestionsByIds(Object.keys(missedQuestions));
     } else {
-      sessionQuestions = domainId ? getQuestionsByDomain(domainId) : [];
+      sessionQuestions = domainId ? sampleDomainQuestions(domainId, count) : [];
     }
 
     startSession(mode, sessionQuestions, domainId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, domainId]);
+  }, [mode, domainId, count]);
 
   if (questions.length === 0) {
     return (

@@ -26,9 +26,9 @@ export default function HomeScreen() {
           </ThemedText>
 
           <Pressable
-            onPress={() => router.push({ pathname: '/quiz', params: { mode: 'exam' } })}
+            onPress={() => router.push({ pathname: '/quiz-setup', params: { mode: 'exam' } })}
             style={[styles.examButton, { backgroundColor: theme.accent }]}>
-            <ThemedText style={styles.examButtonText}>Start Mixed Exam (20 Q)</ThemedText>
+            <ThemedText style={styles.examButtonText}>Start Mixed Exam</ThemedText>
           </Pressable>
 
           <ThemedView style={styles.domainList}>
@@ -36,7 +36,7 @@ export default function HomeScreen() {
               <DomainCard
                 key={stat.id}
                 stat={stat}
-                onPress={() => router.push({ pathname: '/quiz', params: { mode: 'practice', domain: stat.id } })}
+                onPress={() => router.push({ pathname: '/quiz-setup', params: { mode: 'practice', domain: stat.id } })}
               />
             ))}
           </ThemedView>
