@@ -124,5 +124,702 @@
     "correctAnswer": 1,
     "explanation": "Security awareness programs train employees to recognize threats like phishing and social engineering, reducing the human-factor risk that technical controls alone can't fully address.",
     "tags": ["security-concepts", "security-awareness"]
-  }
+  }, 
+  {
+  "id": "security-fundamentals-009",
+  "domain": "Security Fundamentals",
+  "objective": "5.1",
+  "topic": "Threats and Vulnerabilities",
+  "difficulty": "easy",
+  "question": "What is a vulnerability in the context of network security?",
+  "choices": [
+    "A potential danger that could harm a system",
+    "A weakness that could be exploited by a threat actor",
+    "A technique used to reduce security risk",
+    "A record of successful user logins"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A vulnerability is a weakness in software, hardware, configuration, or operational procedures that an attacker could exploit.",
+  "tags": ["vulnerabilities", "security-concepts"]
+},
+{
+  "id": "security-fundamentals-010",
+  "domain": "Security Fundamentals",
+  "objective": "5.1",
+  "topic": "Security Threats",
+  "difficulty": "easy",
+  "question": "Which term describes a potential event or actor that could cause harm to a network?",
+  "choices": [
+    "Threat",
+    "Mitigation",
+    "Authorization",
+    "Accounting"
+  ],
+  "correctAnswer": 0,
+  "explanation": "A threat is anything capable of exploiting a vulnerability and causing harm to systems, data, or network operations.",
+  "tags": ["threats", "security-concepts"]
+},
+{
+  "id": "security-fundamentals-011",
+  "domain": "Security Fundamentals",
+  "objective": "5.1",
+  "topic": "Security Exploits",
+  "difficulty": "medium",
+  "question": "What is an exploit?",
+  "choices": [
+    "A documented security policy",
+    "A weakness in a system configuration",
+    "A method or piece of code used to take advantage of a vulnerability",
+    "A backup copy of a device configuration"
+  ],
+  "correctAnswer": 2,
+  "explanation": "An exploit is a technique, command, or piece of code that takes advantage of an existing vulnerability.",
+  "tags": ["exploits", "vulnerabilities"]
+},
+{
+  "id": "security-fundamentals-012",
+  "domain": "Security Fundamentals",
+  "objective": "5.1",
+  "topic": "Mitigation Techniques",
+  "difficulty": "medium",
+  "question": "A network administrator installs a vendor-provided software update that corrects a known vulnerability. Which mitigation technique is being used?",
+  "choices": [
+    "Patching",
+    "Social engineering",
+    "Accounting",
+    "Port mirroring"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Patching applies software updates that correct known vulnerabilities and reduces the likelihood that those vulnerabilities can be exploited.",
+  "tags": ["mitigation", "patching"]
+},
+{
+  "id": "security-fundamentals-013",
+  "domain": "Security Fundamentals",
+  "objective": "5.1",
+  "topic": "Defense in Depth",
+  "difficulty": "hard",
+  "question": "Which security design best demonstrates defense in depth?",
+  "choices": [
+    "Using one powerful firewall as the only security control",
+    "Using firewalls, endpoint protection, access controls, segmentation, and monitoring together",
+    "Allowing all internal traffic because it has already passed through the perimeter firewall",
+    "Disabling logging to improve device performance"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Defense in depth uses multiple overlapping security controls so that the failure of one control does not leave the entire network unprotected.",
+  "tags": ["defense-in-depth", "mitigation"]
+},
+{
+  "id": "security-fundamentals-014",
+  "domain": "Security Fundamentals",
+  "objective": "5.2",
+  "topic": "Security Awareness",
+  "difficulty": "easy",
+  "question": "Which attack is a security awareness program most likely to help employees recognize?",
+  "choices": [
+    "Phishing",
+    "Route summarization",
+    "VLAN pruning",
+    "EtherChannel negotiation"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Security awareness training helps users recognize phishing messages, social engineering, suspicious attachments, and other common threats.",
+  "tags": ["security-awareness", "phishing"]
+},
+{
+  "id": "security-fundamentals-015",
+  "domain": "Security Fundamentals",
+  "objective": "5.2",
+  "topic": "Physical Access Control",
+  "difficulty": "easy",
+  "question": "Which control provides physical security for a data center?",
+  "choices": [
+    "A locked server-room door with badge access",
+    "An extended access control list",
+    "A DNS server",
+    "A static default route"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Locks, badge readers, guards, cameras, and biometric scanners are examples of controls that restrict physical access to equipment.",
+  "tags": ["physical-security", "access-control"]
+},
+{
+  "id": "security-fundamentals-016",
+  "domain": "Security Fundamentals",
+  "objective": "5.2",
+  "topic": "Tailgating",
+  "difficulty": "medium",
+  "question": "An unauthorized person follows an employee through a secure door without using their own access badge. What type of security incident is this?",
+  "choices": [
+    "Tailgating",
+    "Password spraying",
+    "ARP spoofing",
+    "VLAN hopping"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Tailgating occurs when an unauthorized individual follows an authorized person into a restricted physical area.",
+  "tags": ["tailgating", "physical-security"]
+},
+{
+  "id": "security-fundamentals-017",
+  "domain": "Security Fundamentals",
+  "objective": "5.2",
+  "topic": "Security Training",
+  "difficulty": "medium",
+  "question": "What is the primary difference between general security awareness and role-based security training?",
+  "choices": [
+    "Awareness is for managers only, while training is for all users",
+    "Awareness introduces common risks, while role-based training teaches skills required for specific responsibilities",
+    "Awareness is technical, while training never includes technical material",
+    "There is no meaningful difference"
+  ],
+  "correctAnswer": 1,
+  "explanation": "General awareness helps all users understand common risks, while role-based training provides more specific knowledge for functions such as administration or incident response.",
+  "tags": ["security-training", "security-awareness"]
+},
+{
+  "id": "security-fundamentals-018",
+  "domain": "Security Fundamentals",
+  "objective": "5.3",
+  "topic": "Local Device Passwords",
+  "difficulty": "easy",
+  "question": "Which Cisco IOS command configures an encrypted privileged EXEC password?",
+  "choices": [
+    "enable secret class",
+    "enable password class",
+    "password class",
+    "login local class"
+  ],
+  "correctAnswer": 0,
+  "explanation": "The enable secret command configures a hashed password used to protect access to privileged EXEC mode.",
+  "tags": ["enable-secret", "device-access"]
+},
+{
+  "id": "security-fundamentals-019",
+  "domain": "Security Fundamentals",
+  "objective": "5.3",
+  "topic": "Console Access",
+  "difficulty": "medium",
+  "question": "Which command sequence requires a locally configured line password when accessing a Cisco device through the console?",
+  "choices": [
+    "line console 0, password cisco, login",
+    "line console 0, password cisco, login local",
+    "interface console 0, enable secret cisco",
+    "line vty 0 4, password cisco, transport input console"
+  ],
+  "correctAnswer": 0,
+  "explanation": "The password command assigns the console line password, and the login command tells IOS to request that line password.",
+  "tags": ["console-security", "local-passwords"]
+},
+{
+  "id": "security-fundamentals-020",
+  "domain": "Security Fundamentals",
+  "objective": "5.3",
+  "topic": "Local User Authentication",
+  "difficulty": "medium",
+  "question": "Which configuration causes a VTY line to authenticate users against the local username database?",
+  "choices": [
+    "password cisco",
+    "login local",
+    "enable password cisco",
+    "service password-encryption"
+  ],
+  "correctAnswer": 1,
+  "explanation": "The login local command directs the line to authenticate users using locally configured username and secret credentials.",
+  "tags": ["login-local", "vty"]
+},
+{
+  "id": "security-fundamentals-021",
+  "domain": "Security Fundamentals",
+  "objective": "5.3",
+  "topic": "Password Encryption",
+  "difficulty": "medium",
+  "question": "What is the effect of the Cisco IOS service password-encryption command?",
+  "choices": [
+    "It encrypts all traffic entering the router",
+    "It obscures supported plaintext passwords in the running configuration",
+    "It enables SSH public-key authentication",
+    "It converts all local passwords into enable secrets"
+  ],
+  "correctAnswer": 1,
+  "explanation": "The command obscures supported plaintext passwords in the configuration using reversible Type 7 encryption. It does not provide strong cryptographic protection.",
+  "tags": ["password-encryption", "ios-security"]
+},
+{
+  "id": "security-fundamentals-022",
+  "domain": "Security Fundamentals",
+  "objective": "5.3",
+  "topic": "VTY Access Control",
+  "difficulty": "hard",
+  "question": "A router has a local username configured, but remote SSH users are not prompted for a username. Which command is most likely missing from the VTY lines?",
+  "choices": [
+    "login local",
+    "service password-encryption",
+    "enable secret",
+    "exec-timeout 0 0"
+  ],
+  "correctAnswer": 0,
+  "explanation": "The login local command instructs the VTY lines to use the router's local username database for authentication.",
+  "tags": ["ssh", "login-local"]
+},
+{
+  "id": "security-fundamentals-023",
+  "domain": "Security Fundamentals",
+  "objective": "5.4",
+  "topic": "Password Complexity",
+  "difficulty": "easy",
+  "question": "Which password is the strongest?",
+  "choices": [
+    "password1",
+    "Cisco2026",
+    "P@ssword",
+    "River-Planet-Glass-47!"
+  ],
+  "correctAnswer": 3,
+  "explanation": "Long passwords or passphrases containing varied and unpredictable characters are generally more resistant to guessing and brute-force attacks.",
+  "tags": ["password-complexity", "password-policy"]
+},
+{
+  "id": "security-fundamentals-024",
+  "domain": "Security Fundamentals",
+  "objective": "5.4",
+  "topic": "Password Management",
+  "difficulty": "medium",
+  "question": "Why should organizations avoid requiring excessively frequent password changes when there is no evidence of compromise?",
+  "choices": [
+    "Frequent changes disable multifactor authentication",
+    "Users may select predictable variations or write passwords down",
+    "Password changes prevent account logging",
+    "Frequently changed passwords cannot be hashed"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Excessively frequent changes can encourage weak patterns, such as incrementing a number, and may lead users to store passwords insecurely.",
+  "tags": ["password-management", "password-policy"]
+},
+{
+  "id": "security-fundamentals-025",
+  "domain": "Security Fundamentals",
+  "objective": "5.4",
+  "topic": "Multifactor Authentication",
+  "difficulty": "easy",
+  "question": "Which example uses two different authentication factors?",
+  "choices": [
+    "A password and a PIN",
+    "A fingerprint and facial recognition",
+    "A password and a one-time code from a mobile application",
+    "Two security questions"
+  ],
+  "correctAnswer": 2,
+  "explanation": "A password is something the user knows, while a code generated by a registered mobile device represents something the user possesses.",
+  "tags": ["mfa", "authentication-factors"]
+},
+{
+  "id": "security-fundamentals-026",
+  "domain": "Security Fundamentals",
+  "objective": "5.4",
+  "topic": "Digital Certificates",
+  "difficulty": "medium",
+  "question": "What is a primary purpose of a digital certificate?",
+  "choices": [
+    "To bind an identity to a public key",
+    "To replace all encryption algorithms",
+    "To assign private IPv4 addresses",
+    "To record failed login attempts"
+  ],
+  "correctAnswer": 0,
+  "explanation": "A digital certificate associates an identified entity, such as a user or server, with a public cryptographic key.",
+  "tags": ["certificates", "public-key-infrastructure"]
+},
+{
+  "id": "security-fundamentals-027",
+  "domain": "Security Fundamentals",
+  "objective": "5.4",
+  "topic": "Biometric Authentication",
+  "difficulty": "medium",
+  "question": "Which authentication factor is represented by a fingerprint scan?",
+  "choices": [
+    "Something you know",
+    "Something you have",
+    "Something you are",
+    "Somewhere you connect"
+  ],
+  "correctAnswer": 2,
+  "explanation": "Biometric characteristics such as fingerprints, facial features, and iris patterns are categorized as something the user is.",
+  "tags": ["biometrics", "authentication"]
+},
+{
+  "id": "security-fundamentals-028",
+  "domain": "Security Fundamentals",
+  "objective": "5.5",
+  "topic": "Site-to-Site VPNs",
+  "difficulty": "easy",
+  "question": "What does a site-to-site VPN commonly connect?",
+  "choices": [
+    "Two separate organizational networks over an untrusted network",
+    "A switch port to a local Ethernet endpoint",
+    "Two VLANs through an access port",
+    "A wireless client directly to another wireless client"
+  ],
+  "correctAnswer": 0,
+  "explanation": "A site-to-site VPN creates a protected tunnel between networks, such as a branch office and headquarters, across the internet.",
+  "tags": ["site-to-site-vpn", "ipsec"]
+},
+{
+  "id": "security-fundamentals-029",
+  "domain": "Security Fundamentals",
+  "objective": "5.5",
+  "topic": "Remote-Access VPNs",
+  "difficulty": "easy",
+  "question": "Which scenario is best suited for a remote-access VPN?",
+  "choices": [
+    "A remote employee securely connecting to the corporate network",
+    "Two switches forming an EtherChannel",
+    "A router learning routes through OSPF",
+    "An access point joining a wireless LAN controller"
+  ],
+  "correctAnswer": 0,
+  "explanation": "A remote-access VPN allows an individual user or endpoint to securely connect to an organization's network from a remote location.",
+  "tags": ["remote-access-vpn", "vpn"]
+},
+{
+  "id": "security-fundamentals-030",
+  "domain": "Security Fundamentals",
+  "objective": "5.5",
+  "topic": "IPsec Security Services",
+  "difficulty": "medium",
+  "question": "Which security service prevents an attacker from reading data carried inside an IPsec VPN tunnel?",
+  "choices": [
+    "Confidentiality",
+    "Availability",
+    "Accounting",
+    "Route summarization"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Confidentiality is provided through encryption, which makes intercepted VPN traffic unreadable without the correct cryptographic keys.",
+  "tags": ["ipsec", "confidentiality"]
+},
+{
+  "id": "security-fundamentals-031",
+  "domain": "Security Fundamentals",
+  "objective": "5.5",
+  "topic": "IPsec Integrity",
+  "difficulty": "hard",
+  "question": "Which IPsec security property allows the receiver to determine whether protected data was modified in transit?",
+  "choices": [
+    "Integrity",
+    "Scalability",
+    "Availability",
+    "Address translation"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Integrity mechanisms allow the recipient to verify that protected data was not altered while traveling across the network.",
+  "tags": ["ipsec", "integrity"]
+},
+{
+  "id": "security-fundamentals-032",
+  "domain": "Security Fundamentals",
+  "objective": "5.6",
+  "topic": "Standard Access Control Lists",
+  "difficulty": "easy",
+  "question": "Which packet information can a standard IPv4 ACL examine when making a filtering decision?",
+  "choices": [
+    "Source IPv4 address",
+    "Destination TCP port",
+    "Source and destination IPv4 addresses",
+    "Destination IPv4 address and protocol"
+  ],
+  "correctAnswer": 0,
+  "explanation": "A standard IPv4 ACL filters traffic using only the source IPv4 address.",
+  "tags": ["standard-acl", "packet-filtering"]
+},
+{
+  "id": "security-fundamentals-033",
+  "domain": "Security Fundamentals",
+  "objective": "5.6",
+  "topic": "Extended Access Control Lists",
+  "difficulty": "medium",
+  "question": "Which information can an extended IPv4 ACL use to filter traffic?",
+  "choices": [
+    "Only the source IPv4 address",
+    "Only the destination IPv4 address",
+    "Source and destination addresses, protocols, and port numbers",
+    "Only source and destination MAC addresses"
+  ],
+  "correctAnswer": 2,
+  "explanation": "Extended ACLs can examine source and destination IPv4 addresses, Layer 3 protocols, and Layer 4 port numbers.",
+  "tags": ["extended-acl", "packet-filtering"]
+},
+{
+  "id": "security-fundamentals-034",
+  "domain": "Security Fundamentals",
+  "objective": "5.6",
+  "topic": "ACL Processing",
+  "difficulty": "medium",
+  "question": "How does a router process entries in an access control list?",
+  "choices": [
+    "It evaluates all entries and uses the most specific match",
+    "It evaluates entries from top to bottom and stops at the first match",
+    "It evaluates permit entries before deny entries",
+    "It randomly selects an entry for each packet"
+  ],
+  "correctAnswer": 1,
+  "explanation": "ACL entries are processed sequentially from top to bottom. Once a packet matches an entry, no later entries are evaluated.",
+  "tags": ["acl-processing", "first-match"]
+},
+{
+  "id": "security-fundamentals-035",
+  "domain": "Security Fundamentals",
+  "objective": "5.6",
+  "topic": "Implicit Deny",
+  "difficulty": "easy",
+  "question": "What happens to a packet that does not match any entry in an IPv4 ACL?",
+  "choices": [
+    "It is permitted by default",
+    "It is denied by the implicit deny statement",
+    "It is sent to the default gateway without filtering",
+    "It is returned to the source"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Every ACL has an implicit deny statement at the end, so unmatched traffic is discarded.",
+  "tags": ["implicit-deny", "acl"]
+},
+{
+  "id": "security-fundamentals-036",
+  "domain": "Security Fundamentals",
+  "objective": "5.6",
+  "topic": "ACL Wildcard Masks",
+  "difficulty": "hard",
+  "question": "Which wildcard mask matches the IPv4 subnet 192.168.20.0/27?",
+  "choices": [
+    "0.0.0.15",
+    "0.0.0.31",
+    "0.0.0.63",
+    "0.0.0.224"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A /27 subnet mask is 255.255.255.224. Subtracting each octet from 255 produces the wildcard mask 0.0.0.31.",
+  "tags": ["wildcard-mask", "acl"]
+},
+{
+  "id": "security-fundamentals-037",
+  "domain": "Security Fundamentals",
+  "objective": "5.6",
+  "topic": "Extended ACL Configuration",
+  "difficulty": "hard",
+  "question": "Which ACL entry permits hosts in 10.1.1.0/24 to access the HTTPS service on server 192.168.50.10?",
+  "choices": [
+    "permit tcp 10.1.1.0 0.0.0.255 host 192.168.50.10 eq 443",
+    "permit udp 10.1.1.0 0.0.0.255 host 192.168.50.10 eq 443",
+    "permit tcp host 192.168.50.10 eq 443 10.1.1.0 0.0.0.255",
+    "permit ip 10.1.1.0 255.255.255.0 host 192.168.50.10 eq 443"
+  ],
+  "correctAnswer": 0,
+  "explanation": "HTTPS uses TCP port 443. The source is the 10.1.1.0/24 subnet, and the destination is the single server 192.168.50.10.",
+  "tags": ["extended-acl", "https"]
+},
+{
+  "id": "security-fundamentals-038",
+  "domain": "Security Fundamentals",
+  "objective": "5.7",
+  "topic": "Port Security",
+  "difficulty": "easy",
+  "question": "What does switch port security restrict?",
+  "choices": [
+    "The MAC addresses allowed to send traffic through a switch port",
+    "The IP routes installed in the routing table",
+    "The DNS servers used by connected clients",
+    "The VLANs advertised by VTP"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Port security limits which source MAC addresses may use a switch access port and can take action when an unauthorized address appears.",
+  "tags": ["port-security", "mac-addresses"]
+},
+{
+  "id": "security-fundamentals-039",
+  "domain": "Security Fundamentals",
+  "objective": "5.7",
+  "topic": "Port Security Violation Modes",
+  "difficulty": "medium",
+  "question": "Which port-security violation mode places the interface into the error-disabled state when a violation occurs?",
+  "choices": [
+    "Protect",
+    "Restrict",
+    "Shutdown",
+    "Monitor"
+  ],
+  "correctAnswer": 2,
+  "explanation": "Shutdown is the default violation mode and places the interface into the error-disabled state after a security violation.",
+  "tags": ["port-security", "shutdown-mode"]
+},
+{
+  "id": "security-fundamentals-040",
+  "domain": "Security Fundamentals",
+  "objective": "5.7",
+  "topic": "Sticky MAC Addresses",
+  "difficulty": "medium",
+  "question": "What is the effect of enabling sticky MAC address learning on a port-security interface?",
+  "choices": [
+    "The switch dynamically learns secure MAC addresses and adds them to the running configuration",
+    "The switch disables MAC address learning on the interface",
+    "The switch permits every MAC address permanently",
+    "The switch sends learned MAC addresses to a DHCP server"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Sticky learning allows the switch to dynamically learn secure MAC addresses and represent them as sticky secure entries in the running configuration.",
+  "tags": ["sticky-mac", "port-security"]
+},
+{
+  "id": "security-fundamentals-041",
+  "domain": "Security Fundamentals",
+  "objective": "5.7",
+  "topic": "DHCP Snooping",
+  "difficulty": "medium",
+  "question": "What attack is DHCP snooping primarily designed to prevent?",
+  "choices": [
+    "A rogue DHCP server providing false network settings",
+    "A host sending ICMP echo requests",
+    "A router advertising an OSPF default route",
+    "A switch receiving superior BPDUs"
+  ],
+  "correctAnswer": 0,
+  "explanation": "DHCP snooping prevents DHCP server messages received on untrusted ports from being accepted, helping block rogue DHCP servers.",
+  "tags": ["dhcp-snooping", "rogue-dhcp"]
+},
+{
+  "id": "security-fundamentals-042",
+  "domain": "Security Fundamentals",
+  "objective": "5.7",
+  "topic": "DHCP Snooping Trust",
+  "difficulty": "hard",
+  "question": "On which switch interface should DHCP snooping trust normally be enabled?",
+  "choices": [
+    "An access port connected to an ordinary user computer",
+    "An uplink leading toward the legitimate DHCP server",
+    "Every unused switch port",
+    "Every access port in the protected VLAN"
+  ],
+  "correctAnswer": 1,
+  "explanation": "The port leading toward the legitimate DHCP server should be trusted because valid DHCP server messages are expected to arrive through that interface.",
+  "tags": ["dhcp-snooping", "trusted-port"]
+},
+{
+  "id": "security-fundamentals-043",
+  "domain": "Security Fundamentals",
+  "objective": "5.7",
+  "topic": "Dynamic ARP Inspection",
+  "difficulty": "hard",
+  "question": "How does Dynamic ARP Inspection commonly determine whether an ARP message received on an untrusted port is valid?",
+  "choices": [
+    "It compares the ARP information with the DHCP snooping binding table",
+    "It compares the destination IP address with the routing table",
+    "It verifies that the ARP message uses TCP",
+    "It checks the switch's spanning-tree root ID"
+  ],
+  "correctAnswer": 0,
+  "explanation": "DAI commonly validates ARP messages using IP-to-MAC address mappings recorded in the DHCP snooping binding table.",
+  "tags": ["dynamic-arp-inspection", "arp-spoofing"]
+},
+{
+  "id": "security-fundamentals-044",
+  "domain": "Security Fundamentals",
+  "objective": "5.8",
+  "topic": "AAA Authentication",
+  "difficulty": "easy",
+  "question": "In the AAA security model, which function verifies a user's identity?",
+  "choices": [
+    "Authentication",
+    "Authorization",
+    "Accounting",
+    "Auditing"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Authentication verifies identity, commonly by validating credentials such as a username and password.",
+  "tags": ["aaa", "authentication"]
+},
+{
+  "id": "security-fundamentals-045",
+  "domain": "Security Fundamentals",
+  "objective": "5.8",
+  "topic": "AAA Authorization and Accounting",
+  "difficulty": "medium",
+  "question": "Which AAA function determines which commands an authenticated network administrator is permitted to execute?",
+  "choices": [
+    "Authentication",
+    "Authorization",
+    "Accounting",
+    "Encryption"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Authorization determines which services, resources, or commands an authenticated user is permitted to access.",
+  "tags": ["aaa", "authorization"]
+},
+{
+  "id": "security-fundamentals-046",
+  "domain": "Security Fundamentals",
+  "objective": "5.8",
+  "topic": "AAA Accounting",
+  "difficulty": "medium",
+  "question": "Which AAA function records information such as login times, commands entered, and session duration?",
+  "choices": [
+    "Authentication",
+    "Authorization",
+    "Accounting",
+    "Segmentation"
+  ],
+  "correctAnswer": 2,
+  "explanation": "Accounting records user activity and resource usage, providing information for auditing, troubleshooting, and compliance.",
+  "tags": ["aaa", "accounting"]
+},
+{
+  "id": "security-fundamentals-047",
+  "domain": "Security Fundamentals",
+  "objective": "5.9",
+  "topic": "Wireless Security Protocols",
+  "difficulty": "medium",
+  "question": "Which encryption algorithm is associated with WPA2 and provides stronger protection than the TKIP algorithm used by early WPA deployments?",
+  "choices": [
+    "AES",
+    "DES",
+    "MD5",
+    "RC4 without TKIP"
+  ],
+  "correctAnswer": 0,
+  "explanation": "WPA2 commonly uses AES-based CCMP, which provides stronger wireless encryption and integrity protection than TKIP.",
+  "tags": ["wpa2", "aes"]
+},
+{
+  "id": "security-fundamentals-048",
+  "domain": "Security Fundamentals",
+  "objective": "5.10",
+  "topic": "WPA2 Pre-Shared Key",
+  "difficulty": "hard",
+  "question": "An administrator configures a WLAN to use WPA2 with a pre-shared key. Which statement describes how clients authenticate to this WLAN?",
+  "choices": [
+    "Each client must present a certificate issued by a certificate authority",
+    "All authorized clients use the same configured shared secret",
+    "Clients authenticate using their switch-port MAC addresses",
+    "The access point automatically creates a unique RADIUS account for each client"
+  ],
+  "correctAnswer": 1,
+  "explanation": "WPA2-Personal uses a pre-shared key that is configured on the WLAN and entered by each authorized wireless client.",
+  "tags": ["wpa2-psk", "wlan-security"]
+},
+{
+  "id": "security-fundamentals-049",
+  "domain": "Security Fundamentals",
+  "objective": "5.10",
+  "topic": "WPA3 Security Enhancements",
+  "difficulty": "hard",
+  "question": "Which WPA3 feature provides protection against offline password-guessing attacks?",
+  "choices": [
+    "Simultaneous Authentication of Equals (SAE)",
+    "Temporal Key Integrity Protocol (TKIP)",
+    "Wired Equivalent Privacy (WEP)",
+    "Dynamic Host Configuration Protocol (DHCP)"
+  ],
+  "correctAnswer": 0,
+  "explanation": "WPA3-Personal uses SAE, which replaces the WPA2 four-way handshake and resists offline dictionary attacks.",
+  "tags": ["wpa3", "sae"]
+}
 ]

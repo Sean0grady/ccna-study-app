@@ -107,5 +107,566 @@
     "correctAnswer": 2,
     "explanation": "HTTP 404 (Not Found) indicates the requested resource does not exist at the given URI; 200 indicates success, 401/403 indicate authorization issues, and 500 indicates a server error.",
     "tags": ["rest-api", "http-status-codes"]
-  }
+  },
+  {
+  "id": "automation-programmability-008",
+  "domain": "Automation and Programmability",
+  "objective": "6.1",
+  "topic": "Benefits of Network Automation",
+  "difficulty": "moderate",
+  "question": "An organization manages 300 switches using manual CLI configuration. Which benefit would network automation most directly provide?",
+  "choices": [
+    "It would eliminate the need to assign IP addresses to network devices",
+    "It would allow consistent configurations to be deployed repeatedly while reducing human error",
+    "It would cause all user traffic to pass through a centralized controller",
+    "It would replace all routing protocols with REST API calls"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Automation allows administrators to apply standardized configurations across many devices more consistently and efficiently. This reduces repetitive manual work, configuration errors, and configuration drift.",
+  "tags": ["automation", "configuration-consistency", "network-management"]
+},
+{
+  "id": "automation-programmability-009",
+  "domain": "Automation and Programmability",
+  "objective": "6.2",
+  "topic": "Traditional and Controller-Based Networks",
+  "difficulty": "moderate",
+  "question": "Which statement best describes a key difference between traditional networks and controller-based networks?",
+  "choices": [
+    "Traditional networks cannot use dynamic routing protocols",
+    "Controller-based networks centralize policy decisions and provide an abstraction of the underlying devices",
+    "Traditional networks separate the control plane from every network device",
+    "Controller-based networks remove the data plane from switches and routers"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Controller-based networking centralizes or logically centralizes policy and control functions. The controller provides an abstraction of the network, while network devices continue to forward traffic using their data planes.",
+  "tags": ["controller-based-networking", "traditional-networking", "control-plane"]
+},
+{
+  "id": "automation-programmability-010",
+  "domain": "Automation and Programmability",
+  "objective": "6.3",
+  "topic": "Underlay and Overlay Networks",
+  "difficulty": "moderate",
+  "question": "Two fabric edge devices cannot establish an overlay tunnel because their loopback addresses are unreachable from one another. Which component should the administrator troubleshoot first?",
+  "choices": [
+    "The northbound API",
+    "The underlay network",
+    "The management application",
+    "The JSON payload"
+  ],
+  "correctAnswer": 1,
+  "explanation": "The underlay provides the physical and IP connectivity required between fabric devices. If the fabric nodes cannot reach one another's tunnel endpoint addresses, the overlay tunnels cannot be established.",
+  "tags": ["underlay", "overlay", "fabric", "sdn"]
+},
+{
+  "id": "automation-programmability-011",
+  "domain": "Automation and Programmability",
+  "objective": "6.3.b",
+  "topic": "Northbound and Southbound APIs",
+  "difficulty": "moderate",
+  "question": "A network assurance application requests topology information from a software-defined networking controller. Which type of interface is being used between the application and the controller?",
+  "choices": [
+    "Southbound API",
+    "Northbound API",
+    "Console interface",
+    "Data-plane interface"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A northbound API connects applications and automation systems to a controller. A southbound API connects the controller to the network devices that it manages.",
+  "tags": ["northbound-api", "southbound-api", "controller"]
+},
+{
+  "id": "automation-programmability-012",
+  "domain": "Automation and Programmability",
+  "objective": "6.4",
+  "topic": "Predictive AI in Network Operations",
+  "difficulty": "moderate",
+  "question": "A monitoring platform analyzes historical interface statistics and predicts that a WAN link is likely to become congested during the next business day. Which technology is primarily being demonstrated?",
+  "choices": [
+    "Generative AI",
+    "Predictive AI",
+    "Static configuration management",
+    "Infrastructure as code"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Predictive AI uses historical and current data to identify patterns and forecast future events, such as congestion or device failures. Generative AI is primarily used to create new content, such as text, configurations, or summaries.",
+  "tags": ["predictive-ai", "machine-learning", "network-operations"]
+},
+{
+  "id": "automation-programmability-013",
+  "domain": "Automation and Programmability",
+  "objective": "6.5",
+  "topic": "REST API HTTP Methods",
+  "difficulty": "moderate",
+  "question": "An application needs to retrieve the operational status of an interface through a REST API without modifying the interface. Which HTTP method should it use?",
+  "choices": [
+    "POST",
+    "GET",
+    "PUT",
+    "DELETE"
+  ],
+  "correctAnswer": 1,
+  "explanation": "The GET method retrieves a resource or information about a resource without changing it. POST commonly creates a resource, PUT updates or replaces a resource, and DELETE removes a resource.",
+  "tags": ["rest-api", "http-get", "crud"]
+},
+{
+  "id": "automation-programmability-014",
+  "domain": "Automation and Programmability",
+  "objective": "6.5",
+  "topic": "CRUD and HTTP Verbs",
+  "difficulty": "moderate",
+  "question": "A REST API client must replace the configuration of an existing resource at a known URI. Which HTTP method is most appropriate?",
+  "choices": [
+    "GET",
+    "POST",
+    "PUT",
+    "DELETE"
+  ],
+  "correctAnswer": 2,
+  "explanation": "PUT is commonly used to update or replace a resource at a known URI. In CRUD terminology, PUT corresponds to an update operation, while GET reads, POST creates, and DELETE removes resources.",
+  "tags": ["rest-api", "http-put", "crud"]
+},
+{
+  "id": "automation-programmability-015",
+  "domain": "Automation and Programmability",
+  "objective": "6.5",
+  "topic": "API Authentication",
+  "difficulty": "moderate",
+  "question": "A REST API client includes a short-lived access value in the Authorization header of each request instead of repeatedly sending a username and password. Which authentication method is being used?",
+  "choices": [
+    "Basic authentication",
+    "Bearer token authentication",
+    "SSH public-key authentication",
+    "SNMP community authentication"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Bearer token authentication uses an access token that is normally included in the HTTP Authorization header. The token represents the client's authorization and can be limited in duration and permissions.",
+  "tags": ["api-authentication", "bearer-token", "rest-api"]
+},
+{
+  "id": "automation-programmability-016",
+  "domain": "Automation and Programmability",
+  "objective": "6.6",
+  "topic": "Ansible and Terraform",
+  "difficulty": "moderate",
+  "question": "Which statement correctly compares Ansible and Terraform?",
+  "choices": [
+    "Ansible requires an agent on every managed device, while Terraform uses Telnet",
+    "Ansible commonly uses YAML playbooks for configuration tasks, while Terraform defines a desired infrastructure state",
+    "Ansible is used only for monitoring, while Terraform is used only for packet forwarding",
+    "Ansible and Terraform can manage only Cisco devices"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Ansible commonly uses YAML playbooks to automate configuration and operational tasks and is typically agentless. Terraform uses declarative configuration files to describe and provision a desired infrastructure state.",
+  "tags": ["ansible", "terraform", "configuration-management"]
+},
+{
+  "id": "automation-programmability-017",
+  "domain": "Automation and Programmability",
+  "objective": "6.7",
+  "topic": "JSON Data Structures",
+  "difficulty": "moderate",
+  "question": "Examine the following JSON data: { \"hostname\": \"R1\", \"interfaces\": [\"GigabitEthernet0/0\", \"GigabitEthernet0/1\"], \"reachable\": true }. Which statement is correct?",
+  "choices": [
+    "The value associated with \"hostname\" is a Boolean",
+    "The value associated with \"interfaces\" is an array",
+    "The value associated with \"reachable\" is a string",
+    "The entire JSON structure is an array"
+  ],
+  "correctAnswer": 1,
+  "explanation": "The square brackets indicate that the value of \"interfaces\" is an array containing two string elements. The hostname value is a string, reachable is a Boolean, and the outer curly braces define a JSON object.",
+  "tags": ["json", "arrays", "data-types"]
+},
+{
+  "id": "automation-programmability-018",
+  "domain": "Automation and Programmability",
+  "objective": "6.1",
+  "topic": "Configuration Drift",
+  "difficulty": "moderate",
+  "question": "A company deploys the same standard configuration to 50 branch routers. Several months later, administrators discover that manual changes have caused the router configurations to differ. Which automation-related problem has occurred?",
+  "choices": [
+    "Configuration drift",
+    "Data-plane convergence",
+    "API rate limiting",
+    "Overlay encapsulation"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Configuration drift occurs when device configurations gradually become inconsistent with the organization's intended standard. Automation tools can regularly compare actual configurations with the desired configuration and correct differences.",
+  "tags": ["automation", "configuration-drift", "configuration-consistency"]
+},
+{
+  "id": "automation-programmability-019",
+  "domain": "Automation and Programmability",
+  "objective": "6.2",
+  "topic": "Traditional Network Control",
+  "difficulty": "moderate",
+  "question": "In a traditional network, which component normally makes control-plane decisions such as building a routing table?",
+  "choices": [
+    "A centralized automation server for every device",
+    "Each individual router or multilayer switch",
+    "The application using a northbound API",
+    "The switch interfaces operating in the data plane"
+  ],
+  "correctAnswer": 1,
+  "explanation": "In a traditional network, each router or multilayer switch runs control-plane protocols and independently builds information such as routing and MAC address tables. Controller-based networks logically centralize many policy and control functions.",
+  "tags": ["traditional-networking", "control-plane", "routing-table"]
+},
+{
+  "id": "automation-programmability-020",
+  "domain": "Automation and Programmability",
+  "objective": "6.3.a",
+  "topic": "Control Plane and Data Plane",
+  "difficulty": "moderate",
+  "question": "Which action is performed by the data plane of a network device?",
+  "choices": [
+    "Calculating the best OSPF route to a destination",
+    "Establishing a neighbor relationship with another router",
+    "Forwarding a packet based on an existing forwarding table entry",
+    "Defining network policy through a controller application"
+  ],
+  "correctAnswer": 2,
+  "explanation": "The data plane forwards packets and frames by using information already installed in forwarding tables. Routing protocol calculations and topology decisions are control-plane functions.",
+  "tags": ["data-plane", "control-plane", "packet-forwarding"]
+},
+{
+  "id": "automation-programmability-021",
+  "domain": "Automation and Programmability",
+  "objective": "6.3",
+  "topic": "Network Fabric",
+  "difficulty": "moderate",
+  "question": "In a controller-based network architecture, what does the term fabric most commonly describe?",
+  "choices": [
+    "The physical cabling connecting endpoints to access switches",
+    "The combination of underlay and overlay components that provides network connectivity and services",
+    "A JSON document containing controller credentials",
+    "A routing protocol used exclusively between SDN controllers"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A network fabric combines the underlay infrastructure with overlay mechanisms to provide connectivity, segmentation, and policy services across the network.",
+  "tags": ["fabric", "underlay", "overlay", "controller-based-networking"]
+},
+{
+  "id": "automation-programmability-022",
+  "domain": "Automation and Programmability",
+  "objective": "6.4",
+  "topic": "Generative AI in Network Operations",
+  "difficulty": "moderate",
+  "question": "Which network operations task is the best example of generative AI?",
+  "choices": [
+    "Forecasting interface utilization based on historical measurements",
+    "Detecting that current traffic differs from an established baseline",
+    "Creating a proposed device configuration from a natural-language request",
+    "Calculating an OSPF shortest-path tree"
+  ],
+  "correctAnswer": 2,
+  "explanation": "Generative AI creates new content, such as configuration examples, summaries, scripts, or troubleshooting recommendations. Forecasting and anomaly detection are more closely associated with predictive AI and machine learning.",
+  "tags": ["generative-ai", "network-operations", "configuration-generation"]
+},
+{
+  "id": "automation-programmability-023",
+  "domain": "Automation and Programmability",
+  "objective": "6.4",
+  "topic": "Machine Learning and Anomaly Detection",
+  "difficulty": "moderate",
+  "question": "A network management system learns the normal traffic patterns of campus switches and alerts administrators when one switch begins sending an unusual amount of outbound traffic. Which capability is being demonstrated?",
+  "choices": [
+    "Static route redistribution",
+    "Machine-learning-based anomaly detection",
+    "Generative configuration deployment",
+    "Southbound API authentication"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Machine-learning systems can establish a baseline of normal network behavior and identify activity that significantly differs from that baseline. This is commonly called anomaly detection.",
+  "tags": ["machine-learning", "anomaly-detection", "network-monitoring"]
+},
+{
+  "id": "automation-programmability-024",
+  "domain": "Automation and Programmability",
+  "objective": "6.5",
+  "topic": "REST API Requests",
+  "difficulty": "moderate",
+  "question": "A client sends the following REST API request: POST /api/v1/devices with a JSON body describing a new router. What is the most likely purpose of the request?",
+  "choices": [
+    "Retrieve information about all existing devices",
+    "Create a new device resource",
+    "Delete the specified device resource",
+    "Replace an existing device resource"
+  ],
+  "correctAnswer": 1,
+  "explanation": "POST is commonly associated with the CRUD create operation. The JSON request body provides the information needed by the server to create the new resource.",
+  "tags": ["rest-api", "http-post", "crud"]
+},
+{
+  "id": "automation-programmability-025",
+  "domain": "Automation and Programmability",
+  "objective": "6.5",
+  "topic": "REST API Data Encoding",
+  "difficulty": "moderate",
+  "question": "A REST API client includes the HTTP header Content-Type: application/json in a request. What does this header indicate?",
+  "choices": [
+    "The client expects authentication through an SSH key",
+    "The request body is encoded as JSON",
+    "The server must return an HTTP success code",
+    "The requested resource is read-only"
+  ],
+  "correctAnswer": 1,
+  "explanation": "The Content-Type header identifies the format of the data contained in the HTTP message body. The value application/json indicates that the body is encoded using JSON.",
+  "tags": ["rest-api", "json", "content-type", "data-encoding"]
+},
+{
+  "id": "automation-programmability-026",
+  "domain": "Automation and Programmability",
+  "objective": "6.6",
+  "topic": "Ansible Architecture",
+  "difficulty": "moderate",
+  "question": "An administrator wants to use Ansible to configure network devices without installing additional Ansible software on each managed device. Which Ansible characteristic supports this requirement?",
+  "choices": [
+    "Ansible is normally agentless",
+    "Ansible requires a local compiler on each device",
+    "Ansible operates only through a centralized data plane",
+    "Ansible stores playbooks directly in device firmware"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Ansible is generally agentless. The control node connects to managed network devices using existing management protocols or APIs rather than requiring an Ansible agent to be installed on every device.",
+  "tags": ["ansible", "agentless", "configuration-management"]
+},
+{
+  "id": "automation-programmability-027",
+  "domain": "Automation and Programmability",
+  "objective": "6.7",
+  "topic": "Nested JSON Objects",
+  "difficulty": "moderate",
+  "question": "Examine the following JSON data: { \"device\": { \"hostname\": \"SW1\", \"online\": true }, \"portCount\": 48 }. Which statement correctly describes the data?",
+  "choices": [
+    "The value of \"device\" is an array containing two elements",
+    "The value of \"online\" is the string \"true\"",
+    "The value of \"device\" is a nested JSON object",
+    "The value of \"portCount\" is a quoted string"
+  ],
+  "correctAnswer": 2,
+  "explanation": "The value associated with \"device\" is enclosed in curly braces, making it a nested JSON object. The online value is a Boolean, and portCount is a number.",
+  "tags": ["json", "nested-objects", "data-types"]
+}, 
+{
+  "id": "automation-programmability-028",
+  "domain": "Automation and Programmability",
+  "objective": "6.1",
+  "topic": "Automated Configuration Validation",
+  "difficulty": "moderate",
+  "question": "A network automation system compares each switch configuration against an approved template every night. If a difference is detected, the system restores the approved configuration. Which automation capability is being demonstrated?",
+  "choices": [
+    "Configuration compliance and remediation",
+    "Dynamic routing convergence",
+    "Overlay tunnel encapsulation",
+    "Packet-level traffic shaping"
+  ],
+  "correctAnswer": 0,
+  "explanation": "The system checks devices against an approved configuration standard and automatically corrects unauthorized or unintended differences. This supports configuration compliance and remediation while reducing configuration drift.",
+  "tags": ["automation", "configuration-compliance", "remediation"]
+},
+{
+  "id": "automation-programmability-029",
+  "domain": "Automation and Programmability",
+  "objective": "6.2",
+  "topic": "Controller-Based Networking",
+  "difficulty": "moderate",
+  "question": "An administrator uses a controller to apply a security policy to an entire group of access switches instead of configuring an ACL separately on every switch. Which controller-based networking benefit does this demonstrate?",
+  "choices": [
+    "The controller replaces the data plane on each switch",
+    "The controller provides centralized policy management",
+    "The controller eliminates the need for IP connectivity",
+    "The controller causes every switch to use the same MAC address table"
+  ],
+  "correctAnswer": 1,
+  "explanation": "A controller allows policies to be defined and managed centrally, then translated into device-level configurations. The individual switches still maintain data-plane functions such as forwarding frames.",
+  "tags": ["controller-based-networking", "centralized-policy", "network-management"]
+},
+{
+  "id": "automation-programmability-030",
+  "domain": "Automation and Programmability",
+  "objective": "6.3",
+  "topic": "Overlay Networks",
+  "difficulty": "moderate",
+  "question": "A campus fabric uses tunnels between edge devices to transport endpoint traffic across an existing routed IP network. Which component do the tunnels represent?",
+  "choices": [
+    "The physical underlay",
+    "The management plane",
+    "The overlay network",
+    "The northbound interface"
+  ],
+  "correctAnswer": 2,
+  "explanation": "The overlay is the logical network built on top of the physical or routed underlay. Overlay tunnels transport endpoint traffic between fabric devices while hiding many details of the underlying network.",
+  "tags": ["overlay", "underlay", "fabric", "tunneling"]
+},
+{
+  "id": "automation-programmability-031",
+  "domain": "Automation and Programmability",
+  "objective": "6.3.a",
+  "topic": "Control Plane and Data Plane Separation",
+  "difficulty": "moderate",
+  "question": "In a software-defined architecture, a controller calculates forwarding decisions and installs the resulting entries on network devices. Which task remains a data-plane responsibility of the devices?",
+  "choices": [
+    "Defining organization-wide access policies",
+    "Calculating the desired network topology",
+    "Forwarding traffic using the installed entries",
+    "Providing an API to network applications"
+  ],
+  "correctAnswer": 2,
+  "explanation": "The controller performs control-plane functions such as calculating or directing forwarding behavior. Network devices retain the data-plane responsibility of forwarding actual traffic using the entries installed by the controller.",
+  "tags": ["control-plane", "data-plane", "sdn"]
+},
+{
+  "id": "automation-programmability-032",
+  "domain": "Automation and Programmability",
+  "objective": "6.3.b",
+  "topic": "Southbound APIs",
+  "difficulty": "moderate",
+  "question": "A software-defined networking controller sends forwarding instructions to the switches that it manages. Which interface is used for communication from the controller toward the switches?",
+  "choices": [
+    "Northbound API",
+    "Southbound API",
+    "Application programming interface between end hosts",
+    "Overlay management interface"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Southbound APIs allow a controller to communicate with and control network infrastructure devices. Northbound APIs allow applications and automation platforms to communicate with the controller.",
+  "tags": ["southbound-api", "northbound-api", "controller"]
+},
+{
+  "id": "automation-programmability-033",
+  "domain": "Automation and Programmability",
+  "objective": "6.4",
+  "topic": "Predictive AI",
+  "difficulty": "moderate",
+  "question": "A network analytics platform evaluates historical device temperatures, fan speeds, and failure records to identify switches that are likely to fail within the next month. Which technology is primarily being used?",
+  "choices": [
+    "Generative AI",
+    "Predictive AI",
+    "Static configuration management",
+    "Traditional access control"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Predictive AI uses patterns in historical and current data to estimate future outcomes, such as equipment failure. Generative AI instead produces new content such as text, summaries, scripts, or configuration suggestions.",
+  "tags": ["predictive-ai", "machine-learning", "failure-prediction"]
+},
+{
+  "id": "automation-programmability-034",
+  "domain": "Automation and Programmability",
+  "objective": "6.5",
+  "topic": "REST API DELETE Method",
+  "difficulty": "moderate",
+  "question": "A client sends the request DELETE /api/v1/devices/27 to a REST API. What operation is the client most likely requesting?",
+  "choices": [
+    "Retrieve operational information for device 27",
+    "Create a new device using the identifier 27",
+    "Remove the resource representing device 27",
+    "Replace the complete configuration of device 27"
+  ],
+  "correctAnswer": 2,
+  "explanation": "The HTTP DELETE method is associated with deleting a resource. The URI identifies the specific resource, device 27, that the client wants the API server to remove.",
+  "tags": ["rest-api", "http-delete", "crud"]
+},
+{
+  "id": "automation-programmability-035",
+  "domain": "Automation and Programmability",
+  "objective": "6.5",
+  "topic": "REST API Authentication",
+  "difficulty": "moderate",
+  "question": "A REST API request includes an Authorization header containing encoded username and password credentials. Which authentication method is most likely being used?",
+  "choices": [
+    "Basic authentication",
+    "Bearer token authentication",
+    "Certificate-based routing",
+    "SNMPv3 authentication"
+  ],
+  "correctAnswer": 0,
+  "explanation": "HTTP Basic authentication sends an encoded username and password in the Authorization header. Because encoding does not provide encryption, Basic authentication should normally be protected by HTTPS.",
+  "tags": ["rest-api", "basic-authentication", "authorization-header"]
+},
+{
+  "id": "automation-programmability-036",
+  "domain": "Automation and Programmability",
+  "objective": "6.6",
+  "topic": "Terraform",
+  "difficulty": "moderate",
+  "question": "An administrator writes a file describing the desired number and properties of several cloud network resources. A tool compares that desired state with the existing infrastructure and creates the missing resources. Which tool is best associated with this workflow?",
+  "choices": [
+    "Ansible",
+    "Terraform",
+    "Syslog",
+    "Wireshark"
+  ],
+  "correctAnswer": 1,
+  "explanation": "Terraform is an infrastructure-as-code tool that uses declarative configuration files to describe a desired infrastructure state. It compares the desired configuration with the existing environment and determines the required changes.",
+  "tags": ["terraform", "infrastructure-as-code", "desired-state"]
+},
+{
+  "id": "automation-programmability-037",
+  "domain": "Automation and Programmability",
+  "objective": "6.7",
+  "topic": "JSON Data Types",
+  "difficulty": "moderate",
+  "question": "Examine the following JSON data: { \"hostname\": \"R2\", \"enabled\": false, \"description\": null, \"vlans\": [10, 20, 30] }. Which statement is correct?",
+  "choices": [
+    "The value of \"enabled\" is a string",
+    "The value of \"description\" represents the absence of a value",
+    "The values in \"vlans\" must be enclosed in quotation marks to be valid",
+    "The outermost JSON structure is an array"
+  ],
+  "correctAnswer": 1,
+  "explanation": "The JSON value null represents the absence of a value. The enabled value is a Boolean, the VLAN identifiers are valid numeric array elements, and the outer curly braces define an object.",
+  "tags": ["json", "null", "boolean", "arrays"]
+},
+{
+  "id": "automation-programmability-038",
+  "domain": "Automation and Programmability",
+  "objective": "6.5",
+  "topic": "REST API Response Codes",
+  "difficulty": "moderate",
+  "question": "A REST API client sends a GET request for a device resource and receives the HTTP status code 404. What does this response indicate?",
+  "choices": [
+    "The request succeeded and the resource was returned",
+    "The client is not authenticated",
+    "The requested resource could not be found",
+    "The server created a new resource"
+  ],
+  "correctAnswer": 2,
+  "explanation": "HTTP status code 404 means Not Found. The server received the request, but it could not locate the resource identified by the URI. A successful GET request commonly returns 200 OK.",
+  "tags": ["rest-api", "http-status-codes", "404"]
+},
+{
+  "id": "automation-programmability-039",
+  "domain": "Automation and Programmability",
+  "objective": "6.6",
+  "topic": "Ansible Playbooks",
+  "difficulty": "moderate",
+  "question": "An administrator uses an Ansible playbook to configure VLANs on multiple switches. Which data format is most commonly used to write the playbook?",
+  "choices": [
+    "YAML",
+    "HTML",
+    "CSV",
+    "SQL"
+  ],
+  "correctAnswer": 0,
+  "explanation": "Ansible playbooks are commonly written in YAML. YAML uses indentation to organize plays, tasks, variables, and other configuration elements in a human-readable format.",
+  "tags": ["ansible", "yaml", "playbooks"]
+},
+{
+  "id": "automation-programmability-040",
+  "domain": "Automation and Programmability",
+  "objective": "6.7",
+  "topic": "JSON Data Interpretation",
+  "difficulty": "moderate",
+  "question": "Examine the following JSON data: { \"interfaces\": [{ \"name\": \"GigabitEthernet0/1\", \"status\": \"up\" }, { \"name\": \"GigabitEthernet0/2\", \"status\": \"down\" }] }. Which statement is correct?",
+  "choices": [
+    "The value of \"interfaces\" is an array containing two objects",
+    "The value of \"interfaces\" is a single nested object",
+    "The value of \"status\" is a Boolean in both entries",
+    "The JSON data contains three interface objects"
+  ],
+  "correctAnswer": 0,
+  "explanation": "The square brackets show that \"interfaces\" contains an array. Inside the array are two JSON objects, and each object contains a name and status field with string values.",
+  "tags": ["json", "arrays", "objects", "data-interpretation"]
+}
 ]
