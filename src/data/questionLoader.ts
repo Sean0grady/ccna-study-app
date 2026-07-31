@@ -6,7 +6,7 @@ import networkAccess from '@/data/questions/network-access.json';
 import networkFundamentals from '@/data/questions/network-fundamentals.json';
 import securityFundamentals from '@/data/questions/security-fundamentals.json';
 import type { Question } from '@/types/question';
-import { sampleMixedExam as sampleMixedExamFromPool } from '@/utils/sampler';
+import { sampleMixedExam as sampleMixedExamFromPool, shuffle } from '@/utils/sampler';
 
 const RAW: Record<DomainId, Question[]> = {
   'network-fundamentals': networkFundamentals as Question[],
@@ -66,6 +66,11 @@ export function getQuestionsByIds(ids: string[]): Question[] {
 
 export function getQuestionCountByDomain(domainId: DomainId): number {
   return getQuestionsByDomain(domainId).length;
+}
+
+export function sampleDomainQuestions(domainId: DomainId, count?: number): Question[] {
+  const shuffled = shuffle(getQuestionsByDomain(domainId));
+  return count ? shuffled.slice(0, count) : shuffled;
 }
 
 export function sampleMixedExam(count = 20): Question[] {

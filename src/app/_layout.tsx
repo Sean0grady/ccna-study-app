@@ -15,6 +15,7 @@ export default function RootLayout() {
       <AnimatedSplashOverlay />
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="quiz-setup" options={{ headerShown: true, title: 'Start Quiz' }} />
         <Stack.Screen name="quiz" options={{ headerShown: true, title: 'Quiz' }} />
         <Stack.Screen name="results" options={{ headerShown: true, title: 'Results' }} />
       </Stack>
